@@ -8,6 +8,7 @@
 - S3: pruebas con respuestas simuladas; no se contactó una cuenta AWS.
 - Git: rama main inicializada sin commits ni remoto; secretos y carpeta de datos privados excluidos.
 - Docker: archivo incluido, imagen no construida porque el servicio Docker local no estaba en ejecución.
-- GitHub Actions, alojamiento cloud y permisos IAM reales: requieren ejecución en las cuentas del equipo; no están verificados externamente.
+- Alojamiento cloud: demostración publicada y comprobada en Streamlit Community Cloud el 21 de octubre de 2026; ver publicacion.md.
+- GitHub Actions y permisos IAM reales: su validación externa sigue pendiente; las pruebas locales de S3 usan respuestas simuladas.
 
 Las versiones instaladas se registran en requirements.lock.txt. Las pruebas locales no sustituyen una validación de infraestructura desplegada.

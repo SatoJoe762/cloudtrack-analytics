@@ -1,5 +1,9 @@
 # Despliegue paso a paso
 
+## Estado actual
+
+Demostración publicada el 21 de octubre de 2026: [CloudTrack Analytics](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). [Verificación y captura](publicacion.md). S3 sigue pendiente; los pasos de AWS siguientes aún deben ejecutarse.
+
 ## 1. Publicar la demostración
 
 Datos concretos para el formulario de Community Cloud:

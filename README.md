@@ -1,8 +1,12 @@
 # CloudTrack Analytics
 
-Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Base funcional conectada a [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics); despliegue cloud pendiente.**
+Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Base funcional conectada a [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics); [demostración publicada](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Almacenamiento S3 pendiente.**
 
 Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se incumplen los plazos de entrega?
+
+## Demostración en línea
+
+[Abrir CloudTrack Analytics](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Publicada desde main/app.py en Streamlit Community Cloud con Python 3.12. Usa datos sintéticos; no requiere que el visitante instale Python o Docker. Ver [evidencia de publicación](docs/publicacion.md).
 
 ## Incorporación del equipo
 
