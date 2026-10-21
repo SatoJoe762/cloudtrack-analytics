@@ -1,0 +1,2 @@
+# CloudTrack Analytics
+Proyecto académico de cinco estudiantes de Computación en la Nube. Permite analizar ventas entregadas y desempeño de entregas desde CSV locales o S3 privado. Público: equipo y docente. Éxito: ejecutar demo reproducible, explicar métricas, demostrar almacenamiento cloud y despliegue, y presentar evidencias del trabajo mediante PR. Sin datos personales, predicciones, pagos ni sistema operativo de comercio electrónico.

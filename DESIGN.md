@@ -1,0 +1,2 @@
+# Panel inicial
+Modo Operate. Componentes nativos de Streamlit, fondo claro para exposición en aula y verde oscuro para series de datos. Filtros laterales; indicadores con unidades explícitas; pestañas Ventas, Entregas y Datos y metodología. Estados de datos ausentes, selección vacía, CSV inválido y error de S3 con mensajes en español. Datos sintéticos identificados permanentemente en modo demostración. El diseño es una base funcional del framework, sin identidad visual personalizada.

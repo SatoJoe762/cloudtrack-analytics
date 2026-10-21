@@ -1,0 +1,28 @@
+# Trabajo en equipo
+
+`main` siempre debe ejecutar la demostración. Una rama corta por tarea, con PR a main. No hace falta una rama develop para cinco integrantes.
+
+```bash
+git switch main
+git pull --ff-only
+git switch -c feature/filtros-ciudad
+# editar y probar
+python -m pytest -q
+git add app.py
+git commit -m "feat: agregar filtro por ciudad"
+git push -u origin feature/filtros-ciudad
+```
+
+Crear PR desde GitHub, asignar un revisor distinto del autor y vincular un issue. Integrar con Squash and merge después de la revisión y CI. Eliminar la rama integrada. Si main avanzó: `git fetch origin` y `git merge origin/main` desde la rama de trabajo; resolver conflictos y volver a probar. No usar force push en main.
+
+El propietario debe invitar a los otros cuatro en Settings → Collaborators. Configurar protección de main si el plan de GitHub lo permite: PR obligatorio, una aprobación y check `tests`. Si no está disponible, mantener esas reglas como acuerdo de equipo. No hacer commits con la cuenta o claves de otro integrante.
+
+| Integrante | Responsabilidad inicial | Resultado revisable |
+|---|---|---|
+| 1 | Datos y calidad | Contrato CSV, ETL y pruebas de entradas inválidas |
+| 2 | Analítica | KPIs, segmentaciones y preguntas de negocio |
+| 3 | Panel | Filtros, gráficos y estados vacíos |
+| 4 | Cloud y CI | S3 privado, permisos, despliegue y evidencias |
+| 5 | Integración e informe | Issues, pruebas de aceptación, informe y demo |
+
+Todos programan y revisan al menos un PR. El informe se redacta con aportes de cada responsable, no se delega entero al integrante 5. Prefijos de ramas: `feature/`, `fix/`, `docs/`. Commits: `feat:`, `fix:`, `docs:`, `test:`. Nunca versionar `.streamlit/secrets.toml` o CSV reales; usar `data/private/` para archivos locales.
