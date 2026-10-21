@@ -1,8 +1,12 @@
 # CloudTrack Analytics
 
-Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Base funcional, todavía sin despliegue ni repositorio remoto.**
+Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Base funcional conectada a [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics); despliegue cloud pendiente.**
 
 Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se incumplen los plazos de entrega?
+
+## Incorporación del equipo
+
+Cada integrante comienza con [Primeros pasos](docs/primeros-pasos-equipo.md), elige una de las [cinco tareas iniciales](docs/tareas-iniciales.md) y consulta [qué hace cada tecnología](docs/tecnologias.md). El código se revisa mediante PR y las tareas se registran en Issues.
 
 ## Stack y alcance
 
@@ -82,23 +86,16 @@ cloudtrack-analytics/
 └── .gitignore
 ```
 
-## Crear el repositorio GitHub
+## Repositorio y colaboración
 
-La copia entregada ya tiene Git inicializado en main; no tiene commits ni remoto. Si trabajan desde el ZIP, ejecutar primero `git init -b main`.
-
-1. Un integrante crea en GitHub un repositorio vacío llamado `cloudtrack-analytics`. No agregar README, licencia ni .gitignore desde la web porque ya hay archivos locales. Definir entre todos si será público o privado; no publicar datos personales.
-2. Desde esta carpeta ejecutar los comandos siguientes, sustituyendo `TU_USUARIO_O_ORGANIZACION`. Si Git solicita identidad, configurar su propio nombre y correo para este repositorio con `git config user.name` y `git config user.email`.
+Repositorio creado: https://github.com/SatoJoe762/cloudtrack-analytics. El propietario invita a los otros cuatro integrantes; cada uno acepta la invitación y clona el repositorio. No hace falta crear otro remoto ni volver a inicializar Git.
 
 ```bash
-git add .
-git commit -m "feat: base inicial de CloudTrack Analytics"
-git remote add origin https://github.com/TU_USUARIO_O_ORGANIZACION/cloudtrack-analytics.git
-git push -u origin main
+git clone https://github.com/SatoJoe762/cloudtrack-analytics.git
+cd cloudtrack-analytics
 ```
 
-3. Invitar a los otros cuatro integrantes y aplicar las reglas de [CONTRIBUTING.md](CONTRIBUTING.md). Cada uno clona el remoto y crea su entorno; no se comparte la carpeta .venv.
-
-Si tienen GitHub CLI instalada y autenticada, pueden crear el remoto tras el commit con `gh repo create cloudtrack-analytics --private --source=. --remote=origin --push`, en lugar de crearlo desde la web y ejecutar remote add/push.
+Seguir [Primeros pasos](docs/primeros-pasos-equipo.md) para instalar dependencias en macOS, Linux o Windows. Para cada tarea, crear una rama y abrir un PR hacia main según [CONTRIBUTING.md](CONTRIBUTING.md). Las plantillas de Issues y PR ayudan a definir el resultado y comprobarlo.
 
 ## Qué demuestra de Computación en la Nube
 

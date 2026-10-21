@@ -2,6 +2,19 @@
 
 ## 1. Publicar la demostración
 
+Datos concretos para el formulario de Community Cloud:
+
+| Campo | Valor |
+|---|---|
+| Repository | SatoJoe762/cloudtrack-analytics |
+| Branch | main |
+| Main file path | app.py |
+| Python version | 3.12 |
+| Secrets iniciales | Ninguno para Demostración |
+
+Si el repositorio es privado, su propietario debe autorizar el acceso de Streamlit a ese repositorio. La aplicación tiene sus propios permisos para visitantes: después del despliegue, invitar al equipo desde Share y comprobar que un compañero puede abrirla. Tener acceso al repositorio no sustituye esa comprobación. Cambiar a publicación abierta solo si el propietario lo decide y el contenido sigue siendo sintético.
+
+
 1. Subir main a GitHub y comprobar que Actions apruebe las pruebas.
 2. Abrir Streamlit Community Cloud, conectar GitHub y crear una app desde el repositorio.
 3. Seleccionar main, archivo `app.py` y Python 3.12 en opciones avanzadas.
