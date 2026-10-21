@@ -25,4 +25,6 @@ El propietario debe invitar a los otros cuatro en Settings → Collaborators. Co
 | 4 | Cloud y CI | S3 privado, permisos, despliegue y evidencias |
 | 5 | Integración e informe | Issues, pruebas de aceptación, informe y demo |
 
-Todos programan y revisan al menos un PR. El informe se redacta con aportes de cada responsable, no se delega entero al integrante 5. Prefijos de ramas: `feature/`, `fix/`, `docs/`. Commits: `feat:`, `fix:`, `docs:`, `test:`. Nunca versionar `.streamlit/secrets.toml` o CSV reales; usar `data/private/` para archivos locales.
+La implementación principal será coordinada por SatoJoe762. Las responsabilidades numeradas son apoyos propuestos hasta que se asignen nombres: los demás integrantes pueden verificar datos y cálculos a mano, probar el panel desde sus dispositivos, revisar PR, reunir evidencias cloud y redactar partes del informe. No necesitan una suscripción de IA para clonar, ejecutar, probar o revisar el proyecto.
+
+Cada integrante debe dejar una contribución verificable acorde a su trabajo real (código, pruebas, documentación o revisión). El informe debe reflejar quién hizo cada aporte, sin atribuir implementación a quien no la realizó. Evitar que todos editen app.py a la vez; coordinar el diseño visual en su propia rama y los cálculos en cloudtrack/analytics.py. Prefijos de ramas: `feature/`, `fix/`, `docs/`. Commits: `feat:`, `fix:`, `docs:`, `test:`. Nunca versionar `.streamlit/secrets.toml` o CSV reales; usar `data/private/` para archivos locales.

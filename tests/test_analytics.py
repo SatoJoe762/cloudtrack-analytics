@@ -70,3 +70,24 @@ def test_demo_contract():
     result = metrics(load_orders(demo.read_bytes()))
     assert result['orders'] == 600
     assert 0 < result['on_time_pct'] < 100
+
+
+def test_delay_metrics_average_only_positive_delivered_delays():
+    from cloudtrack.analytics import delay_metrics
+    content = CSV + '5,2026-01-01,Santa Cruz,Moda,200,10,entregado,2026-01-03,2026-01-08\n'
+    result = delay_metrics(load_orders(content.encode()))
+    assert result == {'late_deliveries': 2, 'average_delay_days': 3.5}
+
+
+@pytest.mark.parametrize('selection', ['on_time', 'not_delivered', 'empty'])
+def test_delay_metrics_without_late_deliveries(selection):
+    from cloudtrack.analytics import delay_metrics
+    df = load_orders(CSV.encode())
+    subsets = {
+        'on_time': df.loc[df['order_id'].eq('1')],
+        'not_delivered': df.loc[~df['status'].eq('entregado')],
+        'empty': df.iloc[:0],
+    }
+    assert delay_metrics(subsets[selection]) == {
+        'late_deliveries': 0, 'average_delay_days': None,
+    }
