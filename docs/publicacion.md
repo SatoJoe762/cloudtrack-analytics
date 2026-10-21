@@ -22,7 +22,7 @@ Fecha de verificación: 21 de octubre de 2026 (America/La_Paz).
 
 Los resultados fueron observados en el navegador sobre la URL desplegada. La disponibilidad permanente y la concurrencia del equipo no se han medido. La captura muestra la demo con sus filtros iniciales.
 
-![Panel publicado](evidencias/streamlit-publicado.png)
+![Panel publicado](evidencias/streamlit-publicado.jpg)
 
 ## Qué sigue pendiente
 
