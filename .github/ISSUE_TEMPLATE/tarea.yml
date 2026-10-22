@@ -1,0 +1,39 @@
+name: Tarea del proyecto
+description: Definir un cambio pequeño con responsable y criterios de aceptación.
+title: "[Tarea] "
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: Qué problema resuelve y qué resultado debe ver el usuario.
+    validations:
+      required: true
+  - type: input
+    id: responsable
+    attributes:
+      label: Responsable y revisor
+      placeholder: "Responsable @usuario; revisor @otro-usuario"
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance y archivos previstos
+      description: Consultar docs/tareas-iniciales.md. Indicar dependencias de otras tareas.
+    validations:
+      required: true
+  - type: textarea
+    id: aceptacion
+    attributes:
+      label: Criterios de aceptación
+      placeholder: "- [ ] Resultado observable y forma de comprobarlo"
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Validación prevista
+      description: Prueba, cálculo manual, captura o evidencia cloud que demostrará el resultado.
+    validations:
+      required: true

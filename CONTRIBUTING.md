@@ -1,5 +1,7 @@
 # Trabajo en equipo
 
+Primera vez: seguir [Primeros pasos](docs/primeros-pasos-equipo.md). Para repartir trabajo: [cinco tareas iniciales](docs/tareas-iniciales.md).
+
 `main` siempre debe ejecutar la demostración. Una rama corta por tarea, con PR a main. No hace falta una rama develop para cinco integrantes.
 
 ```bash

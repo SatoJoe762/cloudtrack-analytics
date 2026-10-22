@@ -1,0 +1,29 @@
+name: Reportar un error
+description: Explicar cómo reproducir un fallo sin incluir secretos ni datos personales.
+title: "[Error] "
+body:
+  - type: textarea
+    id: reproduccion
+    attributes:
+      label: Pasos para reproducir
+      description: Indicar modo de datos, filtros y acciones. Usar datos sintéticos.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado y resultado observado
+    validations:
+      required: true
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      placeholder: "Python, sistema operativo, navegador y commit"
+    validations:
+      required: true
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Captura o mensaje de error sin claves, tokens, datos personales ni secretos.
