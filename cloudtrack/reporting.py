@@ -18,4 +18,3 @@ def summarize_orders(orders: pd.DataFrame) -> dict:
         "metrics": metrics(orders),
         "delivery_delays": delay_metrics(orders),
     }
-
