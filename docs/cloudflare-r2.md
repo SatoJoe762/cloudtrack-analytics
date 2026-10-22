@@ -44,7 +44,7 @@ AWS_SECRET_ACCESS_KEY = "TU_R2_SECRET_ACCESS_KEY"
 
 Los nombres AWS los reconoce boto3, pero los valores son las credenciales creadas en Cloudflare. La aplicación configura la región `auto` para R2. No pegar claves AWS ni un AWS_SESSION_TOKEN de otra cuenta. Nunca enviar secretos por el chat, incluirlos en capturas ni subirlos a GitHub.
 
-La aplicación publicada debe contener el código de esta rama: revisar e integrar el PR #2 en main antes de probar la opción cloud. Guardar secretos no actualiza por sí solo una versión antigua del código.
+La aplicación publicada debe contener el código de esta rama: revisar e integrar el PR de Cloudflare R2 en main antes de probar la opción cloud. Guardar secretos no actualiza por sí solo una versión antigua del código.
 
 ## 5. Comprobar la integración real
 
