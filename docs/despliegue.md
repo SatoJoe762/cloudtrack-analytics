@@ -26,8 +26,8 @@ Las credenciales del panel son de lectura; la persona que sube el CSV necesita s
 ## 3. Evidencias mínimas y cierre
 
 - URL funcionando y commit desplegado, ejecución exitosa de CI y PR revisado.
-- Captura del objeto S3, bloqueo de acceso público y política con datos sensibles ocultos.
-- Mismo resultado de KPIs en modo demo y S3.
+- Captura del objeto R2, acceso público deshabilitado y alcance de lectura del token, sin mostrar claves.
+- Mismo resultado de KPIs en modo demo y Almacenamiento cloud con el mismo CSV y filtros.
 - Capturas de CSV inválido, selección vacía y error controlado de conexión.
 - Estimación de costos con región, fecha y supuestos, tomada de los precios oficiales vigentes. No asumir gratuidad permanente.
 - Al terminar el curso, revisar recursos activos, versiones almacenadas y credenciales; retirar lo que ya no se usa según las reglas de la cuenta.

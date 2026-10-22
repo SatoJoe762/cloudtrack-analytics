@@ -16,6 +16,26 @@ Una fila representa un pedido completo, no un producto o ítem. Los IDs repetido
 
 No se mezclan monedas ni se incluyen nombres, teléfonos, direcciones o correos. La fecha prometida puede preceder a la real: esa diferencia es precisamente el retraso. El generador produce una fotografía ilustrativa, no un historial de eventos ni una distribución estadística realista.
 
+## Dónde están los datos y cómo actualizarlos
+
+| Modo del panel | Fuente que lee | Persistencia |
+|---|---|---|
+| Demostración | `data/orders_demo.csv`, incluido en GitHub y en el despliegue | Cambia al integrar otro CSV en el repositorio y desplegarlo |
+| Almacenamiento cloud | Objeto privado `cloudtrack-datos/raw/orders.csv` en Cloudflare R2 | Cambia cuando un miembro autorizado reemplaza ese objeto en R2 |
+| Cargar CSV | Archivo elegido desde el equipo del visitante | Se analiza en la sesión; la aplicación no lo escribe en GitHub ni R2 |
+
+El archivo de R2 se creó a partir del CSV sintético del repositorio. Son dos copias independientes: subir a R2 no elimina el archivo de GitHub, y modificar el CSV en GitHub no actualiza R2. Mantener el demo sintético en Git permite reproducir las pruebas y ejecutar sin conexión al almacenamiento cloud. El panel publicado comienza en Demostración; para consultar R2 hay que elegir Almacenamiento cloud.
+
+Para actualizar la fuente cloud:
+
+1. Conservar una copia del CSV anterior fuera del repositorio público si contiene información privada.
+2. Validar el nuevo archivo con `python -m scripts.quality_report RUTA_DEL_CSV` en el entorno del proyecto. Corregir cualquier error antes de subirlo.
+3. Desde la sesión autorizada de Cloudflare, reemplazar `raw/orders.csv` dentro de `cloudtrack-datos`, manteniendo la clase Standard y el acceso público deshabilitado.
+4. Abrir el panel, seleccionar Almacenamiento cloud y recargar la página para provocar una lectura nueva. Comparar el total de pedidos y ventas con el reporte local.
+5. Registrar fecha, responsable, tamaño y resultado. Si falla, restaurar la copia anterior. No modificar las claves para una actualización del CSV.
+
+Para esta aplicación pública usar únicamente datos sintéticos o un dataset autorizado para publicación: que el bucket sea privado no impide que los visitantes consulten y descarguen datos desde el dashboard. Guardar un CSV en `data/private/` lo excluye de Git, pero no anonimiza sus datos ni elimina archivos ya publicados del historial.
+
 ## Fórmulas sobre el conjunto filtrado
 
 - Pedidos registrados = cantidad de filas, incluidos cancelados y en tránsito.

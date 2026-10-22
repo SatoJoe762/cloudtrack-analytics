@@ -1,4 +1,4 @@
-# Arquitectura propuesta y estado inicial
+# Arquitectura implementada
 
 ```mermaid
 flowchart LR
@@ -10,7 +10,7 @@ flowchart LR
     R -->|Despliegue desde main| A
 ```
 
-El gráfico representa la ruta objetivo cloud. El panel ya se publicó en Streamlit con el CSV demo. La conexión R2 está preparada y probada con respuestas simuladas; el bucket y sus credenciales reales siguen pendientes. El ETL se ejecuta dentro de la aplicación en cada interacción: no hay Lambda, scheduler ni pipeline independiente.
+El gráfico representa la ruta cloud comprobada el 22 de octubre de 2026. Streamlit leyó el objeto privado `cloudtrack-datos/raw/orders.csv` con credenciales de solo lectura almacenadas en Secrets. Ver [validación y captura](validacion.md). El ETL se ejecuta dentro de la aplicación en cada interacción: no hay Lambda, scheduler ni pipeline independiente.
 
 ## Relación con la materia
 
@@ -36,4 +36,4 @@ Ejecutar el contenedor en EC2, habilitar HTTPS con un proxy y asociar un rol IAM
 Medir tiempo de lectura y procesamiento con conjuntos sintéticos de tamaños crecientes dentro de 10 MB. Registrar entorno, tamaño, número de filas y varias repeticiones; no inventar latencias ni capacidad. Documentar que el almacenamiento R2 puede escalar independientemente mientras la aplicación sigue limitada por CPU y memoria del alojamiento. Concurrencia y tolerancia a fallos deben describirse como límites a menos que se prueben.
 
 
-Configuración y evidencia pendiente: [guía de Cloudflare R2](cloudflare-r2.md). El archivo s3-read-policy.json no se aplica a R2; se utiliza el permiso de lectura del token de Cloudflare.
+Configuración reproducible: [guía de Cloudflare R2](cloudflare-r2.md). El archivo s3-read-policy.json no se aplica a R2; se utiliza el permiso de lectura del token de Cloudflare.

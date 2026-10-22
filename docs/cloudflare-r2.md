@@ -1,6 +1,6 @@
 # Conectar CloudTrack Analytics con Cloudflare R2
 
-Arquitectura elegida: GitHub guarda el código, Streamlit Community Cloud ejecuta el panel y Cloudflare R2 guarda el CSV. R2 utiliza una API compatible con S3; no hace falta una cuenta AWS para esta configuración. El código está preparado y probado con respuestas simuladas. La conexión real sigue pendiente de crear la cuenta, activar R2 y configurar sus secretos. La preparación pasó 52 pruebas locales, incluidas lectura R2 simulada, endpoint, filtros y validación del CSV.
+Arquitectura elegida: GitHub guarda el código, Streamlit Community Cloud ejecuta el panel y Cloudflare R2 guarda el CSV. R2 utiliza una API compatible con S3; no hace falta una cuenta AWS para esta configuración. La conexión real se comprobó el 22 de octubre de 2026 en la aplicación publicada: bucket privado `cloudtrack-datos`, objeto `raw/orders.csv` y credencial limitada a lectura del bucket, almacenada en Secrets de Streamlit. Ver [evidencia y pendientes](validacion.md). Los pasos siguientes permiten reproducir la configuración; no hace falta crear otro bucket o token para la instalación actual. La preparación pasó 52 pruebas locales, incluidas lectura R2 simulada, endpoint, filtros y validación del CSV.
 
 ## 1. Crear la cuenta y activar R2
 
@@ -44,7 +44,7 @@ AWS_SECRET_ACCESS_KEY = "TU_R2_SECRET_ACCESS_KEY"
 
 Los nombres AWS los reconoce boto3, pero los valores son las credenciales creadas en Cloudflare. La aplicación configura la región `auto` para R2. No pegar claves AWS ni un AWS_SESSION_TOKEN de otra cuenta. Nunca enviar secretos por el chat, incluirlos en capturas ni subirlos a GitHub.
 
-La aplicación publicada debe contener el código de esta rama: revisar e integrar el PR de Cloudflare R2 en main antes de probar la opción cloud. Guardar secretos no actualiza por sí solo una versión antigua del código.
+El [PR de Cloudflare R2 #3](https://github.com/SatoJoe762/cloudtrack-analytics/pull/3) ya se integró en main. En una instalación nueva, comprobar que el despliegue incluya ese soporte antes de probar la opción cloud. Guardar secretos no actualiza por sí solo una versión antigua del código.
 
 ## 5. Comprobar la integración real
 
