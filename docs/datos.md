@@ -63,4 +63,4 @@ Ver [resultados reproducibles del dataset demo](reporte-calidad.md). Los indicad
 - Datos y metodología muestra cuántos pedidos del archivo se validaron y cuántos quedan seleccionados. Permite descargar el reporte JSON de esa selección y el CSV filtrado.
 - El reporte del panel y el comando usan el mismo resumen en cloudtrack/reporting.py; no mantienen fórmulas separadas. El comando analiza el archivo completo; el panel resume la selección actual.
 
-Pruebas añadidas: restablecimiento desde una selección vacía, preservación de fuente, KPIs con rango de fechas frente a un cálculo independiente, casos sin tardíos y cambio del contenido S3 simulado. La prueba de cambio S3 no sustituye la conexión real con AWS.
+Pruebas añadidas: restablecimiento desde una selección vacía, preservación de fuente, KPIs con rango de fechas frente a un cálculo independiente, casos sin tardíos y cambio del contenido S3 simulado. La prueba de cambio S3 no sustituye la conexión real con Cloudflare R2.

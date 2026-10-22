@@ -14,7 +14,7 @@ Aceptación: filtros coherentes, indicadores con denominadores explícitos y gr�
 
 ## Semana 3 — Cloud
 
-Publicar demo en Community Cloud, configurar S3 privado y credenciales de lectura, probar errores y documentar arquitectura, disponibilidad observada y costos estimados. Registrar tiempos con datasets crecientes sin superar el límite de carga.
+Publicar demo en Community Cloud, configurar R2 privado y credenciales de lectura, probar errores y documentar arquitectura, disponibilidad observada y costos estimados. Registrar tiempos con datasets crecientes sin superar el límite de carga.
 
 Aceptación: URL operativa, lectura S3 real validada, CI en verde y evidencias sin secretos.
 
@@ -42,4 +42,4 @@ Aceptación: cada integrante explica su contribución y al menos una decisión c
 
 ## Guion de demostración
 
-Explicar el problema → mostrar arquitectura → filtrar ciudad y período → interpretar ventas y puntualidad → cargar CSV inválido → mostrar S3 y el mismo análisis → enseñar un PR y CI → cerrar con límites y costos. No presentar pruebas simuladas de S3 como prueba de un despliegue real.
+Explicar el problema → mostrar arquitectura → filtrar ciudad y período → interpretar ventas y puntualidad → cargar CSV inválido → mostrar R2 y el mismo análisis → enseñar un PR y CI → cerrar con límites y costos. No presentar pruebas simuladas de S3 como prueba de un despliegue real.
