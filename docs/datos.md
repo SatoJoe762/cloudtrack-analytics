@@ -52,4 +52,15 @@ El reporte usa `load_orders`, la misma validación del panel: muestra cantidad d
 
 Este control comprueba consistencia interna, no garantiza que los datos sean verdaderos o representativos. No es un reporte de todas las anomalías por fila: ante un archivo inválido devuelve el primer problema detectado. Para la demo se usan datos sintéticos.
 
-Ver [resultados reproducibles del dataset demo](reporte-calidad.md). La integración visual de los nuevos indicadores se realizará después de coordinar con quien rediseñe app.py.
+Ver [resultados reproducibles del dataset demo](reporte-calidad.md). Los indicadores de retraso ya están integrados en la pestaña Entregas del dashboard.
+
+
+## Uso del dashboard
+
+- Entregas muestra cantidad de tardíos y retraso medio entre tardíos; ambos respetan la selección de ciudad, categoría y fecha.
+- Restablecer filtros recupera todas las ciudades y categorías y el rango completo del CSV, sin cambiar la fuente elegida. También funciona después de dejar una selección vacía.
+- Si cambia la fuente o el contenido del CSV, se restablecen filtros para evitar opciones incompatibles o fechas de un archivo anterior.
+- Datos y metodología muestra cuántos pedidos del archivo se validaron y cuántos quedan seleccionados. Permite descargar el reporte JSON de esa selección y el CSV filtrado.
+- El reporte del panel y el comando usan el mismo resumen en cloudtrack/reporting.py; no mantienen fórmulas separadas. El comando analiza el archivo completo; el panel resume la selección actual.
+
+Pruebas añadidas: restablecimiento desde una selección vacía, preservación de fuente, KPIs con rango de fechas frente a un cálculo independiente, casos sin tardíos y cambio del contenido S3 simulado. La prueba de cambio S3 no sustituye la conexión real con AWS.

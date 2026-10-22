@@ -4,24 +4,12 @@ import json
 from pathlib import Path
 import sys
 
-from cloudtrack.analytics import STATUSES, delay_metrics, load_orders, metrics
+from cloudtrack.analytics import load_orders
+from cloudtrack.reporting import summarize_orders
 
 
 def build_report(content: bytes) -> dict:
-    orders = load_orders(content)
-    return {
-        "validation": "passed",
-        "orders": len(orders),
-        "order_dates": {
-            "from": orders["order_date"].min().date().isoformat(),
-            "to": orders["order_date"].max().date().isoformat(),
-        },
-        "cities": {str(city): int(count) for city, count in orders.groupby("city").size().items()},
-        "categories": {str(category): int(count) for category, count in orders.groupby("category").size().items()},
-        "statuses": {status: int(orders["status"].eq(status).sum()) for status in sorted(STATUSES)},
-        "metrics": metrics(orders),
-        "delivery_delays": delay_metrics(orders),
-    }
+    return summarize_orders(load_orders(content))
 
 
 def main(argv=None) -> int:

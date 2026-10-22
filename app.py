@@ -1,9 +1,12 @@
 from pathlib import Path
+from hashlib import sha256
+import json
 import pandas as pd
 import plotly.express as px
 import streamlit as st
 from botocore.exceptions import BotoCoreError, ClientError
-from cloudtrack.analytics import COLUMNS, load_orders, metrics
+from cloudtrack.analytics import COLUMNS, delay_metrics, load_orders, metrics
+from cloudtrack.reporting import summarize_orders
 from cloudtrack.storage import read_s3_orders
 
 st.set_page_config(page_title="CloudTrack Analytics", layout="wide")
@@ -37,10 +40,29 @@ except (BotoCoreError, ClientError):
     st.error("No se pudo leer S3. Revise región, credenciales, permiso GetObject y ruta del objeto.")
     st.stop()
 
+filter_defaults = {
+    "filter_cities": sorted(orders.city.unique()),
+    "filter_categories": sorted(orders.category.unique()),
+    "filter_dates": (orders.order_date.min().date(), orders.order_date.max().date()),
+}
+
+
+def reset_filters():
+    for key in filter_defaults:
+        st.session_state.pop(key, None)
+
+
+# Cambiar de fuente o CSV requiere opciones y fechas compatibles con el nuevo conjunto.
+dataset_signature = (source, sha256(content).hexdigest())
+if st.session_state.get("filter_dataset") != dataset_signature:
+    reset_filters()
+    st.session_state["filter_dataset"] = dataset_signature
+
 with st.sidebar:
-    cities = st.multiselect("Ciudades", sorted(orders.city.unique()), default=sorted(orders.city.unique()))
-    categories = st.multiselect("Categorías", sorted(orders.category.unique()), default=sorted(orders.category.unique()))
-    dates = st.date_input("Fecha del pedido", value=(orders.order_date.min().date(), orders.order_date.max().date()))
+    st.button("Restablecer filtros", on_click=reset_filters)
+    cities = st.multiselect("Ciudades", filter_defaults["filter_cities"], default=filter_defaults["filter_cities"], key="filter_cities")
+    categories = st.multiselect("Categorías", filter_defaults["filter_categories"], default=filter_defaults["filter_categories"], key="filter_categories")
+    dates = st.date_input("Fecha del pedido", value=filter_defaults["filter_dates"], key="filter_dates")
 if len(dates) != 2:
     st.info("Complete el rango de fechas para ver los resultados.")
     st.stop()
@@ -71,6 +93,11 @@ with sales:
         by_category = delivered.groupby("category", as_index=False).amount_bob.sum().sort_values("amount_bob")
         st.plotly_chart(px.bar(by_category, x="amount_bob", y="category", orientation="h", title="Ventas por categoría", labels={"amount_bob": "Ventas (BOB)", "category": "Categoría"}, color_discrete_sequence=["#12624C"]), use_container_width=True)
 with logistics:
+    delays = delay_metrics(filtered)
+    late_count, late_average = st.columns(2)
+    late_count.metric("Entregas tardías", f"{delays['late_deliveries']:,}")
+    late_average.metric("Retraso medio entre tardías", f"{delays['average_delay_days']:.2f} días" if delays['average_delay_days'] is not None else "Sin entregas tardías")
+    st.caption("Solo pedidos entregados después de la fecha prometida. El promedio excluye entregas puntuales, canceladas y en tránsito.")
     statuses = filtered.groupby("status").size().reset_index(name="pedidos")
     st.plotly_chart(px.bar(statuses, x="status", y="pedidos", title="Estado de los pedidos", labels={"status": "Estado", "pedidos": "Pedidos"}, color_discrete_sequence=["#12624C"]), use_container_width=True)
     if not delivered.empty:
@@ -78,6 +105,11 @@ with logistics:
         city_summary["puntualidad"] *= 100
         st.dataframe(city_summary.rename(columns={"city": "Ciudad", "entregados": "Entregados", "puntualidad": "A tiempo (%)", "dias_promedio": "Días promedio"}), hide_index=True, use_container_width=True)
 with detail:
+    st.success(f"CSV validado: {len(orders):,} pedidos. Selección actual: {len(filtered):,} pedidos.")
+    report = summarize_orders(filtered)
+    with st.expander("Resumen de la selección"):
+        st.json(report, expanded=False)
+    st.download_button("Descargar reporte de la selección (JSON)", json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False), file_name="cloudtrack_reporte.json", mime="application/json")
     st.write("Un pedido por fila. No mezclar monedas. Una entrega es puntual cuando delivered_date ≤ promised_date. El ticket medio usa únicamente pedidos entregados. Los días son calendario y el filtro usa order_date.")
     st.write("Ticket medio entregado (BOB):", f"{kpi['average_ticket_bob']:,.2f}" if kpi['average_ticket_bob'] is not None else "Sin entregas")
     st.dataframe(filtered, hide_index=True, use_container_width=True)

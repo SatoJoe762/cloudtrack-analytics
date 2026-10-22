@@ -54,10 +54,17 @@ La puntualidad existente del panel es 49,7 % entre entregados y las ventas entre
 
 ## Cómo conectarlo con el rediseño
 
-La función `delay_metrics(df)` de cloudtrack/analytics.py acepta el mismo DataFrame validado y filtrado que usa el dashboard. Devuelve `late_deliveries` y `average_delay_days`. Si no hay tardíos, el promedio es None; la interfaz deberá mostrar “Sin entregas tardías”. Los nuevos resultados todavía no se incorporaron a app.py para coordinar esa integración con el rediseño visual.
+La función `delay_metrics(df)` de cloudtrack/analytics.py acepta el mismo DataFrame validado y filtrado que usa el dashboard. Devuelve `late_deliveries` y `average_delay_days`. Si no hay tardíos, el promedio es None; la interfaz deberá mostrar “Sin entregas tardías”. Los nuevos resultados ya aparecen en la pestaña Entregas de app.py, manteniendo la presentación nativa de Streamlit.
 
-El reporte analiza el CSV completo recibido. Para un futuro análisis visual por período o ciudad, primero filtrar las filas y después llamar a delay_metrics; nunca calcular sobre el total y mostrarlo como si respondiera a la selección.
+El reporte analiza el CSV completo recibido. En el dashboard se filtran las filas antes de llamar a delay_metrics. El reporte JSON descargable también usa exactamente esa selección.
 
 ## Límites
 
 Un archivo que cumple el contrato puede contener datos que no sean reales. El control valida consistencia, no autenticidad. El estado es una fotografía y no permite reconstruir qué pedidos estaban pendientes en una fecha pasada. Tampoco demuestra lectura S3: ese acceso cloud continúa pendiente de configurar.
+
+
+## Verificación de integración al panel
+
+El 22 de octubre de 2026 pasaron 43 pruebas locales, incluidas pruebas de indicadores, filtros, restablecimiento y cambio de conjunto de datos. En el navegador local, la pestaña Entregas mostró 255 tardíos y 2,89 días con la selección completa. Esta verificación corresponde a la rama de trabajo; el despliegue público solo recibe estos cambios después de integrarlos en main.
+
+![Indicadores de retraso en local](evidencias/integracion-retrasos.jpg)
