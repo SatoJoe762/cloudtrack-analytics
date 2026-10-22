@@ -68,3 +68,14 @@ def metrics(df: pd.DataFrame) -> dict:
         "on_time_pct": float(delivered["on_time"].mean() * 100) if len(delivered) else None,
         "delivery_days": float(delivered["delivery_days"].mean()) if len(delivered) else None,
     }
+
+
+def delay_metrics(df: pd.DataFrame) -> dict:
+    """Retrasos de pedidos entregados; recibe filas validadas por load_orders."""
+    delivered = df.loc[df["status"].eq("entregado")]
+    delay_days = (delivered["delivered_date"] - delivered["promised_date"]).dt.days
+    late_days = delay_days.loc[delay_days.gt(0)]
+    return {
+        "late_deliveries": len(late_days),
+        "average_delay_days": float(late_days.mean()) if len(late_days) else None,
+    }

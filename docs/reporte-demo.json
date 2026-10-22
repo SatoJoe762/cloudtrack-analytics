@@ -1,0 +1,36 @@
+{
+  "validation": "passed",
+  "orders": 600,
+  "order_dates": {
+    "from": "2026-01-01",
+    "to": "2026-03-31"
+  },
+  "cities": {
+    "Cochabamba": 186,
+    "La Paz": 213,
+    "Santa Cruz": 201
+  },
+  "categories": {
+    "Deportes": 168,
+    "Hogar": 137,
+    "Moda": 157,
+    "Tecnología": 138
+  },
+  "statuses": {
+    "cancelado": 30,
+    "en_transito": 63,
+    "entregado": 507
+  },
+  "metrics": {
+    "orders": 600,
+    "delivered": 507,
+    "revenue_bob": 535460.9,
+    "average_ticket_bob": 1056.1358974358975,
+    "on_time_pct": 49.70414201183432,
+    "delivery_days": 4.548323471400394
+  },
+  "delivery_delays": {
+    "late_deliveries": 255,
+    "average_delay_days": 2.8941176470588235
+  }
+}
