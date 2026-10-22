@@ -23,7 +23,7 @@ def metric(app, label):
 def s3_app(monkeypatch, content=CSV.encode()):
     monkeypatch.setattr('cloudtrack.storage.read_s3_orders', lambda: content)
     app = AppTest.from_file(APP).run(timeout=30)
-    app.sidebar.radio[0].set_value('Amazon S3').run()
+    app.sidebar.radio[0].set_value('Almacenamiento cloud').run()
     assert not app.exception
     return app
 
@@ -36,7 +36,7 @@ def test_reset_restores_all_filters_after_empty_selection_and_keeps_source(monke
     assert app.warning
     app.sidebar.button[0].click().run()
     assert not app.exception
-    assert app.sidebar.radio[0].value == 'Amazon S3'
+    assert app.sidebar.radio[0].value == 'Almacenamiento cloud'
     assert app.sidebar.multiselect[0].value == ['La Paz', 'Santa Cruz']
     assert app.sidebar.multiselect[1].value == ['Hogar', 'Moda']
     assert app.sidebar.date_input[0].value == (date(2026, 1, 1), date(2026, 1, 3))

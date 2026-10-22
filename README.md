@@ -1,8 +1,12 @@
 # CloudTrack Analytics
 
-Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Base funcional, todavía sin despliegue ni repositorio remoto.**
+Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Código en [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics) y [demo publicada](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Conexión real a Cloudflare R2 pendiente.**
 
 Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se incumplen los plazos de entrega?
+
+## Almacenamiento elegido
+
+Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). El código admite un endpoint R2 y conserva la alternativa AWS cuando ese endpoint se omite. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La conexión con una cuenta real sigue pendiente; la demo local funciona sin secretos.
 
 ## Stack y alcance
 
@@ -12,7 +16,7 @@ Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se in
 | Interfaz | Streamlit | Dashboard interactivo sin frontend separado |
 | Transformación | pandas | Validar CSV, agrupar y calcular KPIs |
 | Visualización | Plotly Express | Gráficos interactivos con pocas líneas |
-| Almacenamiento cloud | Amazon S3 privado, opcional al desarrollar | Separar datos persistentes de la aplicación |
+| Almacenamiento cloud | Cloudflare R2 privado (alternativa: Amazon S3) | Separar datos persistentes de la aplicación |
 | Publicación | Streamlit Community Cloud | Desplegar desde GitHub |
 | Colaboración | GitHub, PR, Actions y pytest | Revisión y validación automática |
 | Portabilidad | Docker opcional | Ejecutar el mismo servicio en otra plataforma |
@@ -49,7 +53,7 @@ docker run --rm -p 8501:8501 cloudtrack-analytics
 - Filtros por ciudad, categoría y fecha del pedido.
 - Pedidos registrados, ventas entregadas, ticket medio, porcentaje puntual y días medios de entrega.
 - Ventas por fecha y categoría, estados y puntualidad por ciudad.
-- Exportación del CSV filtrado y conexión de lectura a un objeto S3 privado.
+- Exportación del CSV filtrado y conexión de lectura a un objeto privado en R2/S3.
 - Pruebas del contrato, KPIs, acceso S3 simulado y ejecución del panel; workflow para PR y main.
 
 ## Estructura
@@ -82,27 +86,20 @@ cloudtrack-analytics/
 └── .gitignore
 ```
 
-## Crear el repositorio GitHub
+## Repositorio del equipo
 
-La copia entregada ya tiene Git inicializado en main; no tiene commits ni remoto. Si trabajan desde el ZIP, ejecutar primero `git init -b main`.
-
-1. Un integrante crea en GitHub un repositorio vacío llamado `cloudtrack-analytics`. No agregar README, licencia ni .gitignore desde la web porque ya hay archivos locales. Definir entre todos si será público o privado; no publicar datos personales.
-2. Desde esta carpeta ejecutar los comandos siguientes, sustituyendo `TU_USUARIO_O_ORGANIZACION`. Si Git solicita identidad, configurar su propio nombre y correo para este repositorio con `git config user.name` y `git config user.email`.
+El repositorio ya está creado en https://github.com/SatoJoe762/cloudtrack-analytics. Para incorporarse, aceptar la invitación del propietario y clonar una copia propia:
 
 ```bash
-git add .
-git commit -m "feat: base inicial de CloudTrack Analytics"
-git remote add origin https://github.com/TU_USUARIO_O_ORGANIZACION/cloudtrack-analytics.git
-git push -u origin main
+git clone https://github.com/SatoJoe762/cloudtrack-analytics.git
+cd cloudtrack-analytics
 ```
 
-3. Invitar a los otros cuatro integrantes y aplicar las reglas de [CONTRIBUTING.md](CONTRIBUTING.md). Cada uno clona el remoto y crea su entorno; no se comparte la carpeta .venv.
-
-Si tienen GitHub CLI instalada y autenticada, pueden crear el remoto tras el commit con `gh repo create cloudtrack-analytics --private --source=. --remote=origin --push`, en lugar de crearlo desde la web y ejecutar remote add/push.
+Crear un entorno local y seguir [CONTRIBUTING.md](CONTRIBUTING.md) para trabajar con ramas y PR. No hace falta crear otro repositorio, repetir git init ni compartir la carpeta .venv.
 
 ## Qué demuestra de Computación en la Nube
 
-[Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, IAM de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La integración S3 debe desplegarse para demostrar esa parte; el modo local por sí solo no prueba una arquitectura cloud.
+[Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, credenciales de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La conexión real a R2 debe configurarse y comprobarse para demostrar esa parte; el modo local por sí solo no prueba una arquitectura cloud.
 
 [Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Plan e informe](docs/plan-e-informe.md).
 
@@ -110,7 +107,7 @@ Si tienen GitHub CLI instalada y autenticada, pueden crear el remoto tras el com
 
 Análisis descriptivo por lotes, sin predicción ni captura de pedidos en tiempo real. El estado es una fotografía: no existen eventos históricos para reconstruir cada cambio. Los pedidos en tránsito pueden estar vencidos; el KPI de puntualidad solo evalúa entregados. Los filtros no permiten inferir causalidad. Los importes son BOB; no se calcula utilidad ni beneficio con solo el costo de envío. Se rechaza el archivo completo ante errores de contrato para evitar exclusiones silenciosas. La exportación conserva datos de entrada: tratar CSV externos como contenido no confiable al abrirlos en hojas de cálculo.
 
-Usar exclusivamente datos sintéticos en la demo pública. El panel inicial no implementa autenticación propia; los filtros no son controles de acceso. S3 privado protege el objeto, pero el panel muestra sus datos a quien pueda abrir la aplicación. Máximo 10 MB por CSV; cada interacción vuelve a procesar los datos y en S3 realiza una lectura. Docker está incluido como opción y requiere validación en su equipo.
+Usar exclusivamente datos sintéticos en la demo pública. El panel inicial no implementa autenticación propia; los filtros no son controles de acceso. El bucket privado protege el objeto, pero el panel muestra sus datos a quien pueda abrir la aplicación. Máximo 10 MB por CSV; cada interacción vuelve a procesar los datos y en modo cloud realiza una lectura. Docker está incluido como opción y requiere validación en su equipo.
 
 ## Referencias oficiales
 

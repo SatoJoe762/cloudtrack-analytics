@@ -15,7 +15,7 @@ st.write("Comercio electrónico y entregas · Ventas y cumplimiento por ciudad")
 
 with st.sidebar:
     st.header("Datos y filtros")
-    source = st.radio("Fuente de datos", ["Demostración", "Cargar CSV", "Amazon S3"])
+    source = st.radio("Fuente de datos", ["Demostración", "Cargar CSV", "Almacenamiento cloud"])
     uploaded = st.file_uploader("Pedidos en CSV (máximo 10 MB)", type="csv") if source == "Cargar CSV" else None
     st.caption("Sin datos personales. Importes expresados en bolivianos (BOB).")
 
@@ -28,16 +28,16 @@ try:
             st.info("Seleccione un CSV en el panel lateral para comenzar.")
             st.stop()
         content = uploaded.getvalue()
-        st.caption("Archivo cargado solo para esta sesión; no se guarda en S3 ni en el repositorio.")
+        st.caption("Archivo cargado solo para esta sesión; no se guarda en el bucket cloud ni en el repositorio.")
     else:
         content = read_s3_orders()
-        st.caption("Fuente: objeto privado de Amazon S3. Lectura actualizada en cada interacción.")
+        st.caption("Fuente: bucket privado de Cloudflare R2 o Amazon S3, según la configuración. Lectura actualizada en cada interacción.")
     orders = load_orders(content)
 except ValueError as exc:
     st.error(str(exc))
     st.stop()
 except (BotoCoreError, ClientError):
-    st.error("No se pudo leer S3. Revise región, credenciales, permiso GetObject y ruta del objeto.")
+    st.error("No se pudo leer el almacenamiento cloud. Revise endpoint, credenciales de lectura, bucket y ruta del objeto.")
     st.stop()
 
 filter_defaults = {
