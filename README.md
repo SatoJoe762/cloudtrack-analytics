@@ -6,7 +6,7 @@ Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se in
 
 ## Almacenamiento elegido
 
-Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). El código admite un endpoint R2 y conserva la alternativa AWS cuando ese endpoint se omite. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La lectura real del bucket privado se comprobó el 22 de octubre de 2026; la demo local funciona sin secretos. Ver [evidencia y límites de la validación](docs/validacion.md).
+Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). La conexión requiere el endpoint de Cloudflare R2; si falta, el panel ofrece instrucciones sin intentar usar otro proveedor. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La lectura real del bucket privado se comprobó el 22 de octubre de 2026; la demo local funciona sin secretos. Ver [evidencia y límites de la validación](docs/validacion.md).
 
 ## Stack y alcance
 
@@ -16,7 +16,7 @@ Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seg
 | Interfaz | Streamlit | Dashboard interactivo sin frontend separado |
 | Transformación | pandas | Validar CSV, agrupar y calcular KPIs |
 | Visualización | Plotly Express | Gráficos interactivos con pocas líneas |
-| Almacenamiento cloud | Cloudflare R2 privado (alternativa: Amazon S3) | Separar datos persistentes de la aplicación |
+| Almacenamiento cloud | Cloudflare R2 privado | Separar datos persistentes de la aplicación |
 | Publicación | Streamlit Community Cloud | Desplegar desde GitHub |
 | Colaboración | GitHub, PR, Actions y pytest | Revisión y validación automática |
 | Portabilidad | Docker opcional | Ejecutar el mismo servicio en otra plataforma |
@@ -53,8 +53,8 @@ docker run --rm -p 8501:8501 cloudtrack-analytics
 - Filtros por ciudad, categoría y fecha del pedido.
 - Pedidos registrados, ventas entregadas, ticket medio, porcentaje puntual y días medios de entrega.
 - Ventas por fecha y categoría, estados y puntualidad por ciudad.
-- Exportación del CSV filtrado y conexión de lectura a un objeto privado en R2/S3.
-- Pruebas del contrato, KPIs, acceso S3 simulado y ejecución del panel; workflow para PR y main.
+- Exportación del CSV filtrado y conexión de lectura a un objeto privado en R2.
+- Pruebas del contrato, KPIs, acceso R2 simulado y ejecución del panel; workflow para PR y main.
 
 ## Estructura
 
@@ -63,10 +63,10 @@ cloudtrack-analytics/
 ├── app.py                       # Panel y filtros
 ├── cloudtrack/
 │   ├── analytics.py             # Validación y KPIs
-│   └── storage.py               # Lectura S3 con límite y tiempos de espera
+│   └── storage.py               # Lectura R2 con límite y tiempos de espera
 ├── data/orders_demo.csv         # Solo datos sintéticos
 ├── scripts/generate_demo.py
-├── tests/                       # Analítica, S3 y panel
+├── tests/                       # Analítica, R2 y panel
 ├── docs/
 │   ├── arquitectura.md
 │   ├── datos.md
@@ -114,4 +114,4 @@ Usar exclusivamente datos sintéticos en la demo pública. El panel inicial no i
 - [Streamlit: despliegue desde GitHub](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app)
 - [Streamlit: manejo de secretos](https://docs.streamlit.io/deploy/concepts/secrets)
 - [Plotly Express](https://plotly.com/python/plotly-express/)
-- [AWS: prácticas de seguridad de S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html)
+- [Cloudflare R2: documentación](https://developers.cloudflare.com/r2/)

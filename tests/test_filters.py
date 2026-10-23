@@ -20,8 +20,8 @@ def metric(app, label):
     return next(item.value for item in app.metric if item.label == label)
 
 
-def s3_app(monkeypatch, content=CSV.encode()):
-    monkeypatch.setattr('cloudtrack.storage.read_s3_orders', lambda: content)
+def r2_app(monkeypatch, content=CSV.encode()):
+    monkeypatch.setattr('cloudtrack.storage.read_r2_orders', lambda: content)
     app = AppTest.from_file(APP).run(timeout=30)
     app.sidebar.radio[0].set_value('Almacenamiento cloud').run()
     assert not app.exception
@@ -29,7 +29,7 @@ def s3_app(monkeypatch, content=CSV.encode()):
 
 
 def test_reset_restores_all_filters_after_empty_selection_and_keeps_source(monkeypatch):
-    app = s3_app(monkeypatch)
+    app = r2_app(monkeypatch)
     app.sidebar.multiselect[1].set_value(['Moda']).run()
     app.sidebar.date_input[0].set_value((date(2026, 1, 2), date(2026, 1, 2))).run()
     app.sidebar.multiselect[0].set_value([]).run()
@@ -44,7 +44,7 @@ def test_reset_restores_all_filters_after_empty_selection_and_keeps_source(monke
 
 
 def test_delay_indicators_follow_city_filter_and_no_late_case(monkeypatch):
-    app = s3_app(monkeypatch)
+    app = r2_app(monkeypatch)
     assert metric(app, 'Entregas tardías') == '2'
     assert metric(app, 'Retraso medio entre tardías') == '3.50 días'
     app.sidebar.multiselect[0].set_value(['La Paz']).run()
@@ -70,11 +70,11 @@ def test_date_range_kpi_matches_independent_csv_calculation():
     assert metric(app, 'Entregas tardías') == str((delivered.delivered_date > delivered.promised_date).sum())
 
 
-def test_new_s3_content_resets_incompatible_filters(monkeypatch):
-    app = s3_app(monkeypatch)
+def test_new_r2_content_resets_incompatible_filters(monkeypatch):
+    app = r2_app(monkeypatch)
     app.sidebar.multiselect[0].set_value(['La Paz']).run()
     replacement = CSV.replace('La Paz', 'Tarija').replace('Santa Cruz', 'Tarija').replace('2026-01-', '2026-02-')
-    monkeypatch.setattr('cloudtrack.storage.read_s3_orders', lambda: replacement.encode())
+    monkeypatch.setattr('cloudtrack.storage.read_r2_orders', lambda: replacement.encode())
     app.run()
     assert not app.exception
     assert app.sidebar.multiselect[0].value == ['Tarija']

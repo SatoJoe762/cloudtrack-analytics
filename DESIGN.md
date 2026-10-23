@@ -119,7 +119,7 @@ Los insights usan la esquina `insights`; la fuente usa la cápsula `source` con 
 
 ### Cabecera y fuente
 
-Título y descriptor «Comercio electrónico y entregas · Ventas y cumplimiento por ciudad», junto a una etiqueta informativa para Demostración, CSV de esta sesión, Cloudflare R2 o Amazon S3. La etiqueta no es interactiva. Se identifica R2 cuando existe un endpoint configurado.
+Título y descriptor «Comercio electrónico y entregas · Ventas y cumplimiento por ciudad», junto a una etiqueta informativa para Demostración, CSV de esta sesión o Cloudflare R2. La etiqueta no es interactiva. La fuente cloud se identifica como Cloudflare R2, también si necesita configuración. El cargador CSV se presenta en el área principal con ejemplo descargable.
 
 ### Filtros y botones
 
