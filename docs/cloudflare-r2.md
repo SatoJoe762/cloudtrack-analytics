@@ -26,7 +26,7 @@ La carga se hace con tu sesión del panel de Cloudflare. El dashboard de analít
 3. Copiar el Access Key ID y el Secret Access Key. El secreto se muestra al crearlo y debe guardarse en un lugar privado.
 4. Copiar también el endpoint S3 API de R2 que muestra la cuenta. No es la URL pública r2.dev y no incluye el bucket o el nombre del CSV.
 
-Si el bucket tiene jurisdicción específica, copiar su endpoint correspondiente tal como aparece en Cloudflare. El código admite endpoints normales y jurisdiccionales de R2 y exige HTTPS. No hace falta usar una política IAM de AWS: docs/s3-read-policy.json es solo una referencia para la alternativa AWS.
+Si el bucket tiene jurisdicción específica, copiar su endpoint correspondiente tal como aparece en Cloudflare. El código admite endpoints normales y jurisdiccionales de R2 y exige HTTPS. El panel requiere el endpoint de R2; no utiliza otro proveedor si falta ese valor.
 
 ## 4. Configurar secretos
 
@@ -58,7 +58,7 @@ El bucket es privado; el dashboard publicado puede mostrar los datos a cualquier
 
 ## Si algo falla
 
-- Falta CLOUDTRACK_S3_BUCKET: revisar que los secretos estén guardados y reiniciar la aplicación.
+- Cloudflare R2 aún no está configurado en este equipo: revisar .streamlit/secrets.toml y reiniciar Streamlit. Los secretos de la app publicada no se sincronizan con el equipo local.
 - Endpoint inválido: copiar el endpoint S3 API de R2, con HTTPS y sin rutas, parámetros o credenciales en la URL.
 - Error de lectura: revisar bucket, ruta, credenciales, alcance del permiso y si el objeto existe. Si el token expiró o fue revocado, reemplazarlo en Secrets.
 - No aparece Almacenamiento cloud: el código del PR todavía no se integró o la aplicación no terminó de actualizarse.

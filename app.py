@@ -1,7 +1,6 @@
 from pathlib import Path
 from hashlib import sha256
 import json
-import os
 from html import escape
 import pandas as pd
 import plotly.express as px
@@ -9,7 +8,7 @@ import streamlit as st
 from botocore.exceptions import BotoCoreError, ClientError
 from cloudtrack.analytics import COLUMNS, delay_metrics, load_orders, metrics
 from cloudtrack.reporting import summarize_orders
-from cloudtrack.storage import read_s3_orders
+from cloudtrack.storage import R2ConfigurationError, read_r2_orders
 from cloudtrack.presentation import GREEN, BLUE, STATUS_LABELS, STATUS_COLORS, selection_insights, style_chart
 
 st.set_page_config(page_title="CloudTrack Analytics", page_icon=":material/monitoring:", layout="wide")
@@ -20,15 +19,22 @@ with st.sidebar:
     st.markdown('<div class="ct-sidebar-brand">CloudTrack Analytics</div>', unsafe_allow_html=True)
     st.header("Datos y filtros")
     source = st.radio("Fuente de datos", ["Demostración", "Cargar CSV", "Almacenamiento cloud"])
-    uploaded = st.file_uploader("Pedidos en CSV (máximo 10 MB)", type="csv") if source == "Cargar CSV" else None
     st.caption("Explora ventas y entregas. Los filtros se aplican a todo el análisis.")
 
 source_name = {"Demostración": "Datos de demostración", "Cargar CSV": "CSV de esta sesión"}.get(source)
 if source_name is None:
-    source_name = "Cloudflare R2" if os.environ.get("CLOUDTRACK_S3_ENDPOINT", "").strip() else "Amazon S3"
+    source_name = "Cloudflare R2"
 header.markdown(f'''<div class="ct-header"><div><h1>CloudTrack Analytics</h1>
 <p>Comercio electrónico y entregas · Ventas y cumplimiento por ciudad</p></div>
 <span class="ct-source">{escape(source_name)}</span></div>''', unsafe_allow_html=True)
+
+uploaded = None
+if source == "Cargar CSV":
+    st.subheader("Carga tus pedidos")
+    st.write("Selecciona un archivo CSV para generar el análisis. Usa el ejemplo si quieres probar el formato.")
+    uploaded = st.file_uploader("Selecciona tu archivo CSV (máximo 10 MB)", type="csv", key="orders_upload")
+    st.download_button("Descargar CSV de ejemplo", (Path(__file__).parent / "data/orders_demo.csv").read_bytes(), file_name="cloudtrack_ejemplo.csv", mime="text/csv")
+    st.caption("Formato UTF-8, separado por comas. Un pedido por fila. El archivo solo se analiza en esta sesión y no se guarda en R2.")
 
 try:
     if source == "Demostración":
@@ -36,14 +42,20 @@ try:
         st.caption("Datos sintéticos de demostración. No representan una empresa real.")
     elif source == "Cargar CSV":
         if uploaded is None:
-            st.info("Seleccione un CSV en el panel lateral para comenzar.")
+            st.info("Seleccione un CSV arriba para comenzar. También puede descargar y cargar el ejemplo.")
             st.stop()
         content = uploaded.getvalue()
         st.caption("Archivo cargado solo para esta sesión; no se guarda en el bucket cloud ni en el repositorio.")
     else:
-        content = read_s3_orders()
+        content = read_r2_orders()
         st.caption(f"Fuente: {source_name} · Lectura de un bucket privado. El panel no modifica el archivo.")
     orders = load_orders(content)
+except R2ConfigurationError:
+    st.warning("La conexión con Cloudflare R2 aún no está configurada.")
+    st.info("Puedes usar Demostración o Cargar CSV mientras configuras la conexión. La configuración de Streamlit publicado y la de tu equipo son independientes.")
+    with st.expander("Cómo configurar R2 en local"):
+        st.write("Copia .streamlit/secrets.toml.example como .streamlit/secrets.toml, completa las credenciales de lectura de Cloudflare R2 y reinicia Streamlit. Ese archivo privado no se sube a GitHub.")
+    st.stop()
 except ValueError as exc:
     st.error(str(exc))
     st.stop()

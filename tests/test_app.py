@@ -17,11 +17,17 @@ def test_panel_filters_empty_selection_and_upload_prompt():
     app.sidebar.radio[0].set_value('Cargar CSV').run()
     assert not app.exception
     assert 'Seleccione un CSV' in app.info[0].value
+    assert any(item.label == 'Descargar CSV de ejemplo' for item in app.get('download_button'))
+    assert len(app.sidebar.get('file_uploader')) == 0
+    assert len(app.get('file_uploader')) == 1
 
 
-def test_panel_s3_configuration_error_is_controlled(monkeypatch):
+def test_panel_r2_configuration_error_is_controlled(monkeypatch):
     monkeypatch.delenv('CLOUDTRACK_S3_BUCKET', raising=False)
     app = AppTest.from_file(APP).run(timeout=30)
     app.sidebar.radio[0].set_value('Almacenamiento cloud').run()
     assert not app.exception
-    assert 'CLOUDTRACK_S3_BUCKET' in app.error[0].value
+    assert not app.error
+    assert 'Cloudflare R2' in app.warning[0].value
+    assert 'Amazon' not in str([item.value for item in app.markdown])
+    assert 'Cómo configurar R2 en local' in [item.label for item in app.expander]

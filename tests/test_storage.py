@@ -3,24 +3,26 @@ import boto3
 import pytest
 from botocore.response import StreamingBody
 from botocore.stub import Stubber
-from cloudtrack.storage import read_s3_orders
+from cloudtrack.storage import read_r2_orders
 
 
-def test_s3_reads_exact_configured_object_and_closes_stream(monkeypatch):
+def test_r2_reads_exact_configured_object_and_closes_stream(monkeypatch):
     client = boto3.client('s3', region_name='us-east-1', aws_access_key_id='testing', aws_secret_access_key='testing')
+    monkeypatch.setenv('CLOUDTRACK_S3_ENDPOINT', 'https://test.r2.cloudflarestorage.com')
     body = StreamingBody(BytesIO(b'example'), 7)
     monkeypatch.setenv('CLOUDTRACK_S3_BUCKET', 'cloudtrack-test')
     monkeypatch.setenv('CLOUDTRACK_S3_KEY', 'raw/orders.csv')
     monkeypatch.setattr('cloudtrack.storage.boto3.client', lambda *args, **kwargs: client)
     with Stubber(client) as stub:
         stub.add_response('get_object', {'Body': body, 'ContentLength': 7}, {'Bucket': 'cloudtrack-test', 'Key': 'raw/orders.csv'})
-        assert read_s3_orders() == b'example'
+        assert read_r2_orders() == b'example'
         assert body._raw_stream.closed
         stub.assert_no_pending_responses()
 
 
-def test_s3_oversized_object_is_rejected_and_closed(monkeypatch):
+def test_r2_oversized_object_is_rejected_and_closed(monkeypatch):
     client = boto3.client('s3', region_name='us-east-1', aws_access_key_id='testing', aws_secret_access_key='testing')
+    monkeypatch.setenv('CLOUDTRACK_S3_ENDPOINT', 'https://test.r2.cloudflarestorage.com')
     body = StreamingBody(BytesIO(b''), 11 * 1024 * 1024)
     monkeypatch.setenv('CLOUDTRACK_S3_BUCKET', 'cloudtrack-test')
     monkeypatch.setenv('CLOUDTRACK_S3_KEY', 'raw/orders.csv')
@@ -28,14 +30,14 @@ def test_s3_oversized_object_is_rejected_and_closed(monkeypatch):
     with Stubber(client) as stub:
         stub.add_response('get_object', {'Body': body, 'ContentLength': 11 * 1024 * 1024})
         with pytest.raises(ValueError, match='10 MB'):
-            read_s3_orders()
+            read_r2_orders()
         assert body._raw_stream.closed
 
 
-def test_s3_missing_configuration(monkeypatch):
+def test_r2_missing_configuration(monkeypatch):
     monkeypatch.delenv('CLOUDTRACK_S3_BUCKET', raising=False)
-    with pytest.raises(ValueError, match='CLOUDTRACK_S3_BUCKET'):
-        read_s3_orders()
+    with pytest.raises(ValueError, match='bucket de Cloudflare R2'):
+        read_r2_orders()
 
 
 def test_r2_uses_custom_endpoint_auto_region_and_read_only_get(monkeypatch):
@@ -56,7 +58,7 @@ def test_r2_uses_custom_endpoint_auto_region_and_read_only_get(monkeypatch):
     with Stubber(client) as stub:
         stub.add_response('get_object', {'Body': body, 'ContentLength': 6},
                           {'Bucket': 'cloudtrack-datos', 'Key': 'raw/orders.csv'})
-        assert read_s3_orders() == b'orders'
+        assert read_r2_orders() == b'orders'
         stub.assert_no_pending_responses()
     assert body._raw_stream.closed
     assert calls[0][0] == ('s3',)
@@ -83,4 +85,12 @@ def test_r2_invalid_endpoint_is_rejected_before_using_credentials(monkeypatch, e
 
     monkeypatch.setattr('cloudtrack.storage.boto3.client', unexpected_client)
     with pytest.raises(ValueError, match='endpoint HTTPS'):
-        read_s3_orders()
+        read_r2_orders()
+
+
+def test_r2_missing_endpoint_does_not_fall_back_to_another_provider(monkeypatch):
+    monkeypatch.setenv('CLOUDTRACK_S3_BUCKET', 'cloudtrack-datos')
+    monkeypatch.delenv('CLOUDTRACK_S3_ENDPOINT', raising=False)
+    monkeypatch.setattr('cloudtrack.storage.boto3.client', lambda *a, **kw: pytest.fail('No debe conectarse sin endpoint R2'))
+    with pytest.raises(ValueError, match='endpoint de Cloudflare R2'):
+        read_r2_orders()

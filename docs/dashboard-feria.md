@@ -40,3 +40,11 @@ Durante la revisión publicada se detectó que restablecer filtros recuperaba lo
 ![Cumplimiento de entregas](evidencias/dashboard-feria-entregas.jpg)
 
 ![Vista móvil](evidencias/dashboard-feria-movil.jpg)
+
+## Carga CSV y configuración local de R2
+
+El cargador de CSV ahora aparece en el área principal, junto con el ejemplo descargable y las instrucciones. En el navegador local se cargó el demo de 600 pedidos y se comprobó el rechazo de una copia sin order_id, sin mostrar resultados de éxito.
+
+La fuente cloud se identifica siempre como Cloudflare R2. El lector exige bucket y endpoint R2 válidos; no intenta usar otro proveedor si falta el endpoint. Los nombres de configuración S3/AWS se conservan por compatibilidad con el SDK y los secretos ya desplegados, pero sus valores pertenecen a Cloudflare.
+
+Se configuró la conexión local en .streamlit/secrets.toml, con permisos 600 y exclusión de Git. Se reinició Streamlit y se verificó lectura real de 600 pedidos desde R2. Las credenciales no se incluyen en la documentación ni en capturas. La preparación pasa 54 pruebas, incluido el rechazo de una configuración sin endpoint antes de crear un cliente.
