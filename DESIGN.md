@@ -87,7 +87,7 @@ La paleta mantiene el verde del proyecto y añade un azul sobrio para comparar p
 
 **Regla de significado visible.** El color conserva una etiqueta, unidad o contexto textual. La información de estado no depende solo del color.
 
-Plotly mantiene valores auxiliares propios para texto (`#243D35`), rejilla (`#E5ECE8`) y controles (`#5C7169`): hay una pequeña divergencia respecto de los neutrales principales. La constante ámbar (`#A66B16`) existe en presentación, pero no se aplica a los gráficos actuales y no se promueve a token activo. Las alertas conservan los colores nativos de Streamlit. Los captions usan opacidad plena para sostener el contraste del color auxiliar.
+Plotly mantiene valores auxiliares propios para texto (`#243D35`), rejilla (`#E5ECE8`) y controles (`#5C7169`): hay una pequeña divergencia respecto de los neutrales principales. Las alertas conservan los colores nativos de Streamlit. Los captions usan opacidad plena para sostener el contraste del color auxiliar.
 
 ## Typography
 
@@ -173,4 +173,4 @@ La presentación preserva las fórmulas de `cloudtrack/analytics.py`: ventas y t
 - Introducir marca, escala tipográfica o estado visual sin evidencia de implementación.
 - Asumir que el CSS personalizado constituye una API estable del framework.
 
-**Validación y límites.** La revisión del equipo incluye capturas de escritorio y Entregas a ancho 1440, y móvil a ancho 390; el hallazgo de contraste se resolvió con opacidad plena en captions. No se ha probado lector de pantalla ni otros dispositivos físicos. El CSS depende de `data-testid` de Streamlit, atributos BaseWeb y contenedores con key; los primeros dos son detalles internos susceptibles a cambios. Algunas reglas tipográficas, captions, métricas y foco son globales. La regla de overflow de Plotly puede recortar contenido que exceda el contenedor y debe revisarse con etiquetas largas. La paleta auxiliar de Plotly mantiene la divergencia descrita y los widgets mantienen estados nativos. Esta actualización se limita a `DESIGN.md`: no genera sidecar ni cambia código, datos o cálculos.
+**Validación y límites.** La revisión local incluye capturas de escritorio y Entregas a ancho 1440, y móvil a ancho 390; el hallazgo de contraste se resolvió con opacidad plena en captions. No se ha probado lector de pantalla ni otros dispositivos físicos. El CSS depende de `data-testid` de Streamlit, atributos BaseWeb y contenedores con key; los primeros dos son detalles internos susceptibles a cambios. Algunas reglas tipográficas, captions, métricas y foco son globales. La regla de overflow de Plotly puede recortar contenido que exceda el contenedor y debe revisarse con etiquetas largas. La paleta auxiliar de Plotly mantiene la divergencia descrita y los widgets mantienen estados nativos. Esta actualización se limita a `DESIGN.md`: no genera sidecar ni cambia código, datos o cálculos.
