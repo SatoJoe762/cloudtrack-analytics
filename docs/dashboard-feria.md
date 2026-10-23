@@ -11,7 +11,7 @@ La mejora conserva Streamlit y las fórmulas de ventas, puntualidad y retrasos. 
 - Descargas CSV/JSON junto a la tabla de datos; metodología bajo un desplegable. Las notas explican denominadores y límites.
 - Se mantienen filtros, validación, restablecimiento, fuente cloud de lectura y los nombres de las tres pestañas.
 
-## Validación de esta rama
+## Validación del diseño
 
 - 53 pruebas locales aprobadas: las 52 existentes más el caso que verifica insights con filtros, empates, ventas cero y ausencia de entregados.
 - Capturas locales en escritorio (1440 × 1000), móvil (390 × 844) y pestaña Entregas. En móvil se comprobó cuadrícula de dos columnas y ausencia de desbordamiento horizontal del documento.
@@ -20,7 +20,9 @@ La mejora conserva Streamlit y las fórmulas de ventas, puntualidad y retrasos. 
 - Descargas reales desde el navegador local: CSV con 600 pedidos y JSON idéntico al resumen recalculado a partir de ese CSV.
 - El mínimo de Streamlit pasa a 1.66, versión usada para comprobar width, contenedores con key y la presentación actual. No se añaden dependencias.
 
-La lectura real de R2 se validó en la versión publicada anterior. En esta rama se preserva el acceso y pasan las pruebas simuladas, pero no se copiaron credenciales a local ni se ha desplegado aún el nuevo diseño. Comprobar Almacenamiento cloud después de integrar el PR. Las capturas móviles no equivalen a pruebas en dispositivos físicos o con lectores de pantalla.
+El PR #6 se integró y el nuevo diseño está publicado. Se comprobó lectura real de R2: 600 pedidos y BOB 535.460,90. Al filtrar La Paz, el panel y las descargas publicadas dieron 213 pedidos; el JSON coincidió con el resumen recalculado del CSV descargado. No se copiaron credenciales a local. Las capturas móviles no equivalen a pruebas en dispositivos físicos o con lectores de pantalla.
+
+Durante la revisión publicada se detectó que restablecer filtros recuperaba los cálculos pero conservaba etiquetas visuales anteriores. Se corrigió asignando explícitamente los valores de sesión en vez de borrarlos; en navegador local se comprobó que las tres ciudades y los 600 pedidos se restablecen juntos. Las 53 pruebas siguen aprobadas.
 
 ## Guion breve para mostrarlo
 
