@@ -59,8 +59,8 @@ filter_defaults = {
 
 
 def reset_filters():
-    for key in filter_defaults:
-        st.session_state.pop(key, None)
+    for key, value in filter_defaults.items():
+        st.session_state[key] = value
 
 
 # Cambiar de fuente o CSV requiere opciones y fechas compatibles con el nuevo conjunto.
