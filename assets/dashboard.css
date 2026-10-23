@@ -1,0 +1,59 @@
+/* Colores del proyecto; selectores acotados a componentes o contenedores con key. */
+:root {
+  --ct-ink: #193D31;
+  --ct-muted: #536B62;
+  --ct-green: #12624C;
+  --ct-line: #DCE6E0;
+  --ct-soft: #F3F7F4;
+}
+[data-testid="stMainBlockContainer"] { max-width: 1440px; padding: 2.4rem 3rem 3rem; }
+[data-testid="stSidebar"] { border-right: 1px solid var(--ct-line); }
+[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] { padding-top: 2rem; }
+[data-testid="stSidebar"] h2 { font-size: 1.3rem; }
+[data-testid="stSidebar"] [data-testid="stButton"] button { width: 100%; min-height: 2.7rem; }
+h1 { font-size: 2.5rem !important; letter-spacing: -0.035em; line-height: 1.12 !important; padding-bottom: .35rem !important; }
+h2 { font-size: 1.45rem !important; letter-spacing: -.02em; }
+h3 { font-size: 1.1rem !important; }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: var(--ct-muted); opacity: 1; }
+.ct-header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem; border-bottom: 1px solid var(--ct-line); padding-bottom: 1.4rem; margin-bottom: .2rem; }
+.ct-header h1 { margin: 0; color: var(--ct-ink); }
+.ct-header p { margin: .45rem 0 0; color: var(--ct-muted); max-width: 65ch; font-size: 1rem; }
+.ct-source { display: inline-block; color: var(--ct-green); background: #E8F2EC; border: 1px solid #C7DECF; border-radius: 100px; padding: .4rem .8rem; font-size: .85rem; font-weight: 600; white-space: nowrap; }
+.ct-sidebar-brand { color: var(--ct-green); font-size: 1rem; font-weight: 700; margin-bottom: 1rem; }
+.ct-selection { color: var(--ct-muted); font-size: .9rem; line-height: 1.6; padding: .25rem 0 .5rem; overflow-wrap: anywhere; }
+.st-key-kpis [data-testid="stHorizontalBlock"] { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+.st-key-kpis [data-testid="stColumn"] { width: 100%; min-width: 0; }
+.st-key-kpis [data-testid="stMetric"] { border-bottom: 2px solid var(--ct-line); padding: .6rem 0 1rem; }
+.st-key-kpis [data-testid="stMetricLabel"] { color: var(--ct-muted); min-height: 2.8rem; }
+[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; }
+.st-key-kpis [data-testid="stMetricValue"] { font-size: 2.1rem; font-weight: 650; letter-spacing: -.03em; }
+[data-testid="stMetricValue"] > div, [data-testid="stMetricLabel"] p { white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere; }
+.st-key-insights { background: var(--ct-soft); border-radius: 14px; padding: 1.2rem 1.4rem; margin: .5rem 0 1.3rem; }
+.stMarkdown p.ct-insight-title { color: var(--ct-muted); font-size: .85rem; margin: 0 0 .35rem; }
+.stMarkdown p.ct-insight-value { color: var(--ct-ink); font-size: 1.2rem; line-height: 1.4; font-weight: 650; margin: 0; overflow-wrap: anywhere; }
+.stMarkdown p.ct-insight-detail { color: var(--ct-muted); font-size: .9rem; line-height: 1.5; margin: .3rem 0 0; }
+[data-baseweb="tab-list"] { gap: 1.7rem; border-bottom: 1px solid var(--ct-line); }
+[data-baseweb="tab"] { min-height: 3rem; font-size: 1rem; }
+[data-baseweb="tab"][aria-selected="true"] { color: var(--ct-green); font-weight: 650; }
+[data-testid="stPlotlyChart"] { overflow: hidden; }
+[data-testid="stDownloadButton"] button { min-height: 2.75rem; }
+.ct-footer { border-top: 1px solid var(--ct-line); color: var(--ct-muted); font-size: .82rem; margin-top: 2rem; padding-top: 1rem; }
+::selection { background: #CBE5D5; color: #153C2D; }
+button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid var(--ct-green) !important; outline-offset: 3px; }
+@media (max-width: 1150px) {
+  [data-testid="stMainBlockContainer"] { padding: 2rem 1.6rem; }
+  .st-key-kpis [data-testid="stHorizontalBlock"] { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.5rem; }
+}
+@media (max-width: 640px) {
+  [data-testid="stMainBlockContainer"] { padding: 1.5rem 1rem; }
+  h1 { font-size: 1.9rem !important; }
+  .ct-header { gap: .7rem; }
+  .ct-header p { font-size: .93rem; }
+  .st-key-kpis [data-testid="stMetricValue"] { font-size: 1.55rem; }
+  .st-key-kpis [data-testid="stMetricLabel"] { min-height: 2.5rem; font-size: .85rem; }
+  .st-key-insights { padding: 1rem; }
+  [data-baseweb="tab-list"] { gap: .8rem; }
+  [data-baseweb="tab"] { font-size: .86rem; }
+}
+
+.st-key-insights [data-testid="stHorizontalBlock"] { gap: 1rem 2rem; }

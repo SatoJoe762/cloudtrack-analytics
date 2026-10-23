@@ -101,7 +101,7 @@ Crear un entorno local y seguir [CONTRIBUTING.md](CONTRIBUTING.md) para trabajar
 
 [Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, credenciales de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La lectura real desde R2 ya se comprobó en la aplicación publicada; el modo Demostración sigue disponible para trabajar sin credenciales.
 
-[Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Pruebas del equipo](docs/pruebas-equipo.md) · [Plan e informe](docs/plan-e-informe.md).
+[Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Pruebas del equipo](docs/pruebas-equipo.md) · [Dashboard para la feria](docs/dashboard-feria.md) · [Plan e informe](docs/plan-e-informe.md).
 
 ## Límites
 
