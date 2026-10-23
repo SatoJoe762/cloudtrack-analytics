@@ -16,7 +16,7 @@ Aceptación: filtros coherentes, indicadores con denominadores explícitos y gr�
 
 Publicar demo en Community Cloud, configurar R2 privado y credenciales de lectura, probar errores y documentar arquitectura, disponibilidad observada y costos estimados. Registrar tiempos con datasets crecientes sin superar el límite de carga.
 
-Aceptación: URL operativa, lectura S3 real validada, CI en verde y evidencias sin secretos.
+Aceptación: URL operativa, lectura R2 real validada, CI en verde y evidencias sin secretos.
 
 ## Semana 4 — Informe y defensa
 

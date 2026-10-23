@@ -1,12 +1,12 @@
 # CloudTrack Analytics
 
-Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Código en [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics) y [demo publicada](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Conexión real a Cloudflare R2 pendiente.**
+Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Código en [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics) y [demo publicada](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Lectura real desde Cloudflare R2 validada el 22 de octubre de 2026.**
 
 Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se incumplen los plazos de entrega?
 
 ## Almacenamiento elegido
 
-Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). El código admite un endpoint R2 y conserva la alternativa AWS cuando ese endpoint se omite. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La conexión con una cuenta real sigue pendiente; la demo local funciona sin secretos.
+Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). El código admite un endpoint R2 y conserva la alternativa AWS cuando ese endpoint se omite. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La lectura real del bucket privado se comprobó el 22 de octubre de 2026; la demo local funciona sin secretos. Ver [evidencia y límites de la validación](docs/validacion.md).
 
 ## Stack y alcance
 
@@ -99,9 +99,9 @@ Crear un entorno local y seguir [CONTRIBUTING.md](CONTRIBUTING.md) para trabajar
 
 ## Qué demuestra de Computación en la Nube
 
-[Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, credenciales de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La conexión real a R2 debe configurarse y comprobarse para demostrar esa parte; el modo local por sí solo no prueba una arquitectura cloud.
+[Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, credenciales de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La lectura real desde R2 ya se comprobó en la aplicación publicada; el modo Demostración sigue disponible para trabajar sin credenciales.
 
-[Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Plan e informe](docs/plan-e-informe.md).
+[Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Pruebas del equipo](docs/pruebas-equipo.md) · [Plan e informe](docs/plan-e-informe.md).
 
 ## Límites
 

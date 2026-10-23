@@ -60,7 +60,7 @@ El reporte analiza el CSV completo recibido. En el dashboard se filtran las fila
 
 ## Límites
 
-Un archivo que cumple el contrato puede contener datos que no sean reales. El control valida consistencia, no autenticidad. El estado es una fotografía y no permite reconstruir qué pedidos estaban pendientes en una fecha pasada. Tampoco demuestra lectura real de R2: ese acceso real a R2 continúa pendiente de configurar.
+Un archivo que cumple el contrato puede contener datos que no sean reales. El control valida consistencia, no autenticidad. El estado es una fotografía y no permite reconstruir qué pedidos estaban pendientes en una fecha pasada. Este reporte local por sí solo no demuestra lectura cloud. La lectura real de R2 se comprobó por separado; ver [validación del despliegue](validacion.md).
 
 
 ## Verificación de integración al panel
