@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "width": 1440,
+      "keyboard": true,
+      "geometry": {
+        "width": 217,
+        "scroll": 217,
+        "items": [
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "2px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "3px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 121,
+            "outline": "3px"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "keyboard": true,
+      "geometry": {
+        "width": 217,
+        "scroll": 217,
+        "items": [
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "2px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "3px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 121,
+            "outline": "3px"
+          }
+        ]
+      }
+    },
+    {
+      "width": 375,
+      "keyboard": true,
+      "geometry": {
+        "width": 217,
+        "scroll": 217,
+        "items": [
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "2px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 86,
+            "outline": "3px"
+          },
+          {
+            "width": 191,
+            "scroll": 191,
+            "height": 121,
+            "outline": "3px"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

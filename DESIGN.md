@@ -1,176 +1,232 @@
 ---
 name: CloudTrack Analytics
-description: Sistema claro para explorar ventas entregadas y cumplimiento por ciudad.
+description: Panel BI de ventas entregadas y cumplimiento, con controles nativos de Streamlit.
 colors:
-  primary: "#12624C"
-  ink: "#193D31"
-  muted: "#536B62"
-  background: "#FFFFFF"
-  soft: "#F3F7F4"
-  line: "#DCE6E0"
-  punctuality: "#426B91"
-  cancelled: "#8C6B71"
-  source-background: "#E8F2EC"
-  source-border: "#C7DECF"
+  primary: "#4F46E5"
+  primary-hover: "#4338CA"
+  secondary: "#2563EB"
+  accent: "#0891B2"
+  success: "#059669"
+  warning: "#B45309"
+  danger: "#DC2626"
+  background: "#F5F7FC"
+  surface: "#FFFFFF"
+  ink: "#172033"
+  muted: "#64748B"
+  line: "#E2E8F0"
+  soft: "#EEF2FF"
+  sidebar: "#151E38"
+  sidebar-surface: "#202C49"
+  sidebar-ink: "#F1F5FF"
+  sidebar-muted: "#B7C5DF"
+  category-violet: "#9333EA"
+  category-pink: "#DB2777"
+  category-slate: "#475569"
+  sidebar-focus: "#A5B4FC"
+  sidebar-border: "#40506D"
+  sidebar-tag: "#334365"
+  sidebar-divider: "#35415C"
+  sidebar-hover: "#2C3B5B"
 typography:
   display:
-    fontSize: "2.5rem"
-    lineHeight: 1.12
+    fontFamily: 'Inter, "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    fontSize: "1.95rem"
+    fontWeight: 700
+    lineHeight: 1.2
     letterSpacing: "-0.035em"
   headline:
-    fontSize: "1.45rem"
+    fontSize: "1.25rem"
+    fontWeight: 650
     letterSpacing: "-0.02em"
   title:
-    fontSize: "1.1rem"
-  metric:
-    fontSize: "2.1rem"
+    fontSize: "1rem"
     fontWeight: 650
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.01em"
+  metric:
+    fontSize: "1.95rem"
+    fontWeight: 650
+    lineHeight: 1.25
+    letterSpacing: "-0.035em"
+  label:
+    fontSize: "0.78rem"
+    fontWeight: 550
+  caption:
+    fontSize: "0.8rem"
+    lineHeight: 1.5
   chart:
-    fontFamily: "Arial, sans-serif"
-    fontSize: "13px"
+    fontFamily: "Inter, Source Sans 3, sans-serif"
+    fontSize: "12px"
 rounded:
-  insights: "14px"
-  source: "100px"
+  card: "14px"
+  control: "8px"
+  filter-state: "6px"
+  tag: "5px"
 spacing:
-  kpi-gap: "1.5rem"
-  insights-padding: "1.2rem 1.4rem"
-  page-padding: "2.4rem 3rem 3rem"
+  "1": "0.25rem"
+  "2": "0.5rem"
+  "3": "0.75rem"
+  "4": "1rem"
+  "5": "1.5rem"
+  "6": "2rem"
 components:
-  source:
-    backgroundColor: "{colors.source-background}"
+  button-reset:
+    backgroundColor: "{colors.sidebar-surface}"
+    textColor: "{colors.sidebar-ink}"
+    rounded: "{rounded.control}"
+  button-reset-hover:
+    backgroundColor: "{colors.sidebar-hover}"
+  button-download:
+    backgroundColor: "{colors.surface}"
     textColor: "{colors.primary}"
-    rounded: "{rounded.source}"
-    padding: ".4rem .8rem"
-  insights:
+    rounded: "{rounded.control}"
+  button-download-hover:
     backgroundColor: "{colors.soft}"
-    rounded: "{rounded.insights}"
-    padding: "{spacing.insights-padding}"
+  input-date:
+    backgroundColor: "{colors.sidebar-surface}"
+    textColor: "{colors.sidebar-ink}"
+    rounded: "{rounded.control}"
+  tabs:
+    textColor: "{colors.muted}"
+  tabs-active:
+    textColor: "{colors.primary}"
+  source:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.control}"
+    padding: "0.65rem 0.85rem"
+  kpi:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "1.15rem 1rem 0.9rem"
+  insights:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.card}"
+    padding: "1rem 1.25rem 0.75rem"
+  chart-card:
+    backgroundColor: "{colors.surface}"
+    rounded: "{rounded.card}"
+    padding: "1.1rem 1.1rem 0.5rem"
 ---
 
 # Design System: CloudTrack Analytics
 
 ## Overview
 
-CloudTrack conserva su identidad existente: una herramienta académica de análisis en modo **Operate**, clara para exposición en aula y con controles nativos de Streamlit. El refinamiento precisa la jerarquía, la lectura de cifras y el lenguaje de datos; no introduce otra marca, una tipografía externa ni una nueva metáfora visual.
+**Creative North Star: "La mesa de análisis BI"**
 
-El fondo blanco, el verde profundo y las superficies suaves organizan una interfaz de densidad moderada. La cabecera identifica el producto y su fuente; el contexto de selección precede a los indicadores; las observaciones descriptivas ayudan a interpretar los gráficos. Esta especificación registra decisiones implementadas en `app.py`, `assets/dashboard.css`, `cloudtrack/presentation.py` y `.streamlit/config.toml`.
+La dirección elegida combina la claridad de Power BI y Tableau con superficies SaaS: lateral azul profundo, acentos índigo y azul, fondo gris azulado y tarjetas blancas. La marca geométrica y los iconos lineales acompañan una lectura sobria de cifras, unidades y contexto.
+
+La presentación conserva Streamlit como interfaz nativa. Fuente, selección y resultados verificables comparten un lenguaje visual; las observaciones son descriptivas. Este documento registra el rediseño implementado y reemplaza la anterior identidad verde.
 
 **Key Characteristics:**
 
-- Jerarquía textual y unidades explícitas para exposición y verificación.
-- Filtros laterales y tres pestañas de análisis.
-- Superficies planas, líneas suaves y color acompañado de texto.
-- Fuente visible y aviso permanente de datos sintéticos en demostración.
+- Contraste entre lateral profundo y superficies claras.
+- Cifras tabulares, unidades visibles y etiquetas junto al color.
+- Tarjetas de borde fino y controles nativos.
+- Composición adaptable con iconos decorativos discretos.
 
 ## Colors
 
-La paleta mantiene el verde del proyecto y añade un azul sobrio para comparar puntualidad. Los valores de frontmatter son los tokens normativos.
+Los valores de frontmatter reflejan la implementación. `assets/design-tokens.json` es la fuente de color ejecutable: `dashboard_styles()` inyecta sus cadenas como variables `--ct-*` y Plotly consume los mismos tokens. Los colores adicionales de categorías provienen de su lista; los auxiliares del lateral se extraen del CSS. `.streamlit/config.toml` refleja la paleta para widgets nativos y usa el acento claro `sidebar-focus` en el lateral.
 
 ### Primary
 
-- **Verde de análisis** (`primary`): ventas, entregados, marca lateral, pestaña activa, foco visible y acento del tema.
+- **Índigo de análisis** (`primary`): ventas, cifra principal, marca, pestaña activa, foco principal y acciones de descarga.
+- **Índigo profundo** (`primary-hover`): token disponible en el JSON; los botones implementados usan sus estados específicos, no un relleno índigo universal.
 
 ### Secondary
 
-- **Azul de cumplimiento** (`punctuality`): barras de puntualidad por ciudad y estado «En tránsito». El significado depende del título y las etiquetas; no es un estado universal de éxito.
-- **Malva de cancelación** (`cancelled`): «Cancelado», acompañado de nombre y cantidad.
+- **Azul de cumplimiento** (`secondary`): puntualidad por ciudad, estado En tránsito e icono de entregados.
+- **Cian de apoyo** (`accent`): ticket e identificación de categorías.
+- **Verde de entrega**, **ámbar de atención** y **rojo de cancelación** (`success`, `warning`, `danger`): estados o iconos con significado textual explícito. El verde es semántico, no la identidad de marca.
+- **Violeta, rosa y pizarra de categoría**: completan la paleta categórica.
 
 ### Neutral
 
-- **Tinta verde** (`ink`): texto principal y cabecera.
-- **Verde auxiliar** (`muted`): subtítulos, captions, selección, explicación de insights y pie.
-- **Blanco de exposición** (`background`): fondo principal.
-- **Fondo suave** (`soft`): lateral del tema y bloque de lectura de selección.
-- **Línea suave** (`line`): separadores de cabecera, lateral, pestañas, indicadores y pie.
-- **Fuente identificada** (`source-background`, `source-border`): fondo y borde de la etiqueta informativa de origen.
+- **Fondo bruma**, **blanco de tarjeta**, **tinta** y **texto auxiliar** (`background`, `surface`, `ink`, `muted`): capas y jerarquía.
+- **Línea suave** y **lavado índigo** (`line`, `soft`): delimitación, filtros activos y hover de descargas/pestañas.
+- **Azul profundo**, **superficie lateral**, **tinta clara** y **texto lateral auxiliar**: marca, filtros y contexto sobre el lateral.
+- Los auxiliares `sidebar-focus`, `sidebar-border`, `sidebar-tag`, `sidebar-divider` y `sidebar-hover` sostienen foco, campos, selecciones y estados.
 
-**Regla de significado visible.** El color conserva una etiqueta, unidad o contexto textual. La información de estado no depende solo del color.
+**The Visible Meaning Rule.** Cada color de datos conserva nombre, unidad o etiqueta; el color por sí solo no identifica una categoría o estado.
 
-Plotly mantiene valores auxiliares propios para texto (`#243D35`), rejilla (`#E5ECE8`) y controles (`#5C7169`): hay una pequeña divergencia respecto de los neutrales principales. Las alertas conservan los colores nativos de Streamlit. Los captions usan opacidad plena para sostener el contraste del color auxiliar.
+La paleta categórica sigue el orden primary → accent → secondary → warning → category-violet → success → category-pink → category-slate. Se asigna por orden alfabético del conjunto completo y permanece estable al filtrar. Sus ocho colores se repiten cíclicamente si hay más categorías; no garantizan identificadores únicos. Las rampas del sidecar son muestras derivadas para el panel, no nuevos tokens de la aplicación.
 
 ## Typography
 
-**Body Font:** sans serif del tema de Streamlit; la familia concreta depende del framework. **Chart Font:** Arial con fallback sans serif. No se carga una fuente de marca adicional.
+**Display / Body Font:** Inter si está disponible localmente; en caso contrario, Source Sans 3 suministrada por Streamlit, seguida de fuentes del sistema. No se descarga una fuente externa. Plotly comparte las dos primeras familias.
 
-La cabecera usa `display`; las secciones, `headline`; los títulos de gráficos, `title`. El subtítulo principal tiene tamaño (`1rem`) y ancho máximo (`65ch`). Los valores KPI usan `metric` y números tabulares. Etiquetas y valores permiten envolver el texto para mostrar «Sin entregas» sin truncado.
+La cabecera usa `display`; secciones y gráficos usan `headline` y `title`. Las cifras KPI usan `metric`, números tabulares y envoltura de texto, incluidos «Sin entregas». No se fija una escala nueva para el cuerpo nativo. El subtítulo usa tamaño (0.9rem) y ancho máximo (65ch); insights destacan nombres (1.2rem, peso 650, interlineado 1.3). Los captions conservan opacidad plena. Plotly usa ejes (11px) y hover (13px).
 
-Los insights distinguen título auxiliar (`.85rem`), nombre destacado (`1.2rem`, peso 650, interlineado 1.4) y explicación (`.9rem`, interlineado 1.5). La fuente usa (`.85rem`, peso 600); el pie, (`.82rem`). En gráficos el hover usa (`14px`) y los títulos de ejes, (`12px`). Los pesos no especificados conservan los del framework.
+En móvil, cabecera y secciones bajan a (1.6rem / 1.15rem), KPI a (1.5rem) y etiquetas KPI a (0.72rem). Las ayudas nativas permanecen disponibles.
 
 ## Layout
 
-El contenido principal tiene ancho máximo (`1440px`) y padding `page-padding`. La cabecera usa flex y puede envolver la fuente debajo del título. El lateral agrupa fuente, carga de archivo cuando corresponde, restablecimiento, ciudades, categorías y fecha del pedido.
+El contenedor principal tiene ancho máximo (1600px), padding (3.8rem 2rem 2rem) y ritmo basado en los seis pasos de `spacing`. Cabecera y contexto permiten envolver fuente, fechas y filtros activos. El lateral conserva su apertura/cierre nativos.
 
-Los cuatro indicadores usan **CSS grid de cuatro columnas** sobre las columnas nativas. A un viewport de (`1150px`) o menos pasan a **dos columnas**, con gap vertical (`.75rem`) y horizontal (`1.5rem`); no hay regla propia de una columna. En ese umbral el padding principal pasa a (`2rem 1.6rem`).
+Los cuatro KPI forman cuatro columnas; a (1250px) o menos pasan a dos, con padding horizontal principal (1.5rem). No hay una regla propia de una sola columna KPI. Los gráficos de Ventas usan proporción (3:2), los de Entregas (2:3). Entre (641px) y (1050px) se apilan explícitamente; en móvil interviene el apilado nativo.
 
-A (`640px`) o menos, el padding pasa a (`1.5rem 1rem`), el título a (`1.9rem`), los valores KPI a (`1.55rem`) y se compactan pestañas e insights. Streamlit determina el resto del apilado: observaciones en dos columnas, gráficos de ventas en proporción (`3:2`), gráficos de entregas (`2:3`) y descargas en dos columnas. No hay breakpoint propio para estos grupos.
-
-Orden de navegación: **Ventas**, **Entregas**, **Datos y metodología**. El contexto de selección muestra fechas, ciudades, categorías y pedidos seleccionados frente al total. Los gráficos tienen altura base (`330px`); categorías y ciudades crecen según la cantidad de filas (`38px` por fila como mínimo de cálculo).
+A (640px) o menos, el contenido usa padding (3.75rem 1rem 1.5rem). Los KPI conservan dos columnas con gap (0.65rem), altura mínima (140px) y ocultan los iconos decorativos. Los insights se apilan y sustituyen su divisor vertical por uno horizontal; fechas y resumen de selección ocupan líneas propias. Se compactan fuente, pestañas y tarjetas gráficas. Las tablas conservan su navegación nativa dentro del componente.
 
 ## Elevation & Depth
 
-La capa CSS del proyecto no añade sombras. La profundidad surge de superficies suaves, líneas y espacio entre secciones. Los controles nativos pueden conservar tratamientos del framework; no se define un sistema adicional de elevación ni animaciones propias.
+La separación procede del fondo, las tarjetas blancas y bordes finos. El CSS declara `--ct-shadow` (`0 3px 12px rgb(23 32 51 / 5%)`), pero las tarjetas implementadas no lo aplican; no constituye una elevación visible obligatoria. Widgets y popovers conservan tratamientos del framework.
+
+Las transiciones de color y borde duran (160ms, ease-out). No hay desplazamiento decorativo. `prefers-reduced-motion: reduce` desactiva transiciones y animaciones y restaura el scroll automático.
 
 ## Shapes
 
-Los insights usan la esquina `insights`; la fuente usa la cápsula `source` con borde fino. Los indicadores tienen línea inferior (`2px`), sin tarjetas cerradas. Botones, inputs, desplegables, tablas y alertas mantienen formas nativas. No se inventan radios ni estados hover personalizados.
+Tarjetas, insights y uploader usan `card`; campos, botones, fuente y expanders usan `control`. Filtros activos y selecciones laterales usan esquinas más pequeñas. Los bordes de tarjeta son (1px). La marca es un bloque geométrico con icono SVG local; los iconos propios son decorativos y llevan `aria-hidden="true"`.
 
 ## Components
 
-### Cabecera y fuente
+### Buttons and native controls
 
-Título y descriptor «Comercio electrónico y entregas · Ventas y cumplimiento por ciudad», junto a una etiqueta informativa para Demostración, CSV de esta sesión o Cloudflare R2. La etiqueta no es interactiva. La fuente cloud se identifica como Cloudflare R2, también si necesita configuración. El cargador CSV se presenta en el área principal con ejemplo descargable.
+Restablecer ocupa el ancho lateral; descargas usan superficie blanca con texto índigo y hover suave. Ambos mantienen altura mínima (44px), radio `control` y estados nativos. Radio de fuente, multiselects, uploader, calendario, expanders y tablas siguen siendo Streamlit; las selecciones laterales usan tags.
 
-### Filtros y botones
+El rango nativo y el resumen visible usan **DD/MM/YYYY**. Cambiar fuente o contenido restablece filtros compatibles. El foco visible recibe contorno (2px) y separación (3px) en botones, enlaces, inputs, pestañas y summary; botones e inputs laterales usan acento claro. Los subcontroles internos conservan el comportamiento del framework; no se afirma cobertura exhaustiva de foco.
 
-Radio de fuente, uploader CSV, multiselects y calendario nativos. Restablecer ocupa el ancho lateral y tiene altura mínima (`2.7rem`); las descargas tienen altura mínima (`2.75rem`). Cambiar fuente o contenido reinicia filtros para mantener opciones compatibles. El foco visible de botones, enlaces e inputs recibe contorno verde (`2px`) separado (`3px`). Hover, disabled y otros estados internos siguen al framework; no se define foco personalizado para todos los subelementos de multiselect o calendario.
+### Navigation and source
 
-### Indicadores
+Ventas, Entregas y Datos y metodología son pestañas nativas: texto auxiliar, activo índigo, indicador inferior y hover suave. La etiqueta de fuente es informativa, no un botón. «Panel de análisis» en el lateral identifica la vista actual, no añade una ruta.
 
-Pedidos registrados; ventas entregadas en BOB; entregas a tiempo; tiempo medio de entrega en días. Ayudas y caption explican los denominadores. Sin entregados, puntualidad y tiempo muestran «Sin entregas»; ventas y conteo conservan las cifras válidas. Entregas añade cantidad tardía y promedio de retraso entre tardías, con «Sin entregas tardías» cuando corresponde.
+### KPI cards
 
-### Lectura de la selección
+Ventas entregadas · BOB; Pedidos entregados; Entregas a tiempo; Ticket promedio · BOB. Cada tarjeta mantiene métrica y ayuda nativas, contexto y denominador. La cifra de ventas es índigo; los iconos no transmiten información exclusiva. Sin entregados, los promedios y porcentajes muestran «Sin entregas».
 
-Bloque descriptivo solo sobre entregados: categoría de mayor venta y ciudad de menor puntualidad. Los empates enumeran todos los nombres en orden alfabético. La cuota corresponde a cada categoría indicada; con ventas totales cero, se explica el cero y se omite el porcentaje. Con una sola ciudad se indica su puntualidad sin sugerir comparación. Sin entregados se omite el bloque. Las observaciones no atribuyen causas ni predicen resultados.
+Entregas conserva un panel secundario de entregas tardías, retraso medio entre tardías y tiempo medio de entrega. Datos mantiene el total de pedidos registrados.
 
-### Gráficos
+### Insights
 
-Ventas en el tiempo usa área verde con línea (`2.5px`) y relleno de opacidad (`.09`), agrupada por fecha del pedido. El hover unifica la fecha y muestra BOB con dos decimales. Las fechas sin observaciones no se rellenan: el caption avisa que la línea conecta días disponibles.
+Un panel compartido presenta categoría de mayor venta y ciudad de menor puntualidad. Expone todos los empates alfabéticamente, omite cuota si las ventas son cero y evita comparar ciudades cuando solo hay una. Sin entregados se omite. La advertencia de alcance descriptivo permanece visible.
 
-Categorías usa barras horizontales verdes. Estados usa barras con nombres, cantidades y colores explícitos. Puntualidad por ciudad usa barras azules, porcentaje con un decimal y conteo de entregados en hover; el eje se extiende a (`105%`) para alojar etiquetas. Se ocultan leyendas redundantes y el logotipo de Plotly, se desactiva scroll zoom y se permite exportar PNG a escala 2. Fondos transparentes y márgenes automáticos mantienen continuidad con la página.
+### Chart cards
 
-### Navegación, tablas y exportaciones
+Área índigo para ventas diarias, barras categóricas multicolor, estados verde/azul/rojo y puntualidad azul. Las leyendas redundantes están ocultas; nombres de ejes, categorías, etiquetas de estado y porcentajes identifican los datos. No todos los valores tienen etiqueta persistente: ventas y categorías muestran detalle en hover.
 
-Pestañas con separador inferior y texto activo verde de peso 650; la interacción por teclado y estados internos pertenecen a Streamlit/BaseWeb. Las tablas nativas ocultan el índice y ocupan el ancho disponible. Cumplimiento muestra ciudad, entregados, porcentaje y días promedio; Datos muestra las columnas originales verificables. CSV y reporte JSON exportan solo la selección activa. Metodología y resumen JSON usan expanders.
+Altura base (310px), crecimiento por fila (42px) en categorías/ciudades, fondo transparente y rejilla del token `line`. Puntualidad extiende el eje hasta (105%) para etiquetas. La línea temporal conecta observaciones disponibles y lo explica en caption. Plotly desactiva scroll zoom y su logotipo; exporta PNG a escala 2.
 
-### Estados y confianza
+### States, data and exports
 
-- Sin CSV: mensaje informativo para seleccionar el archivo; se detiene el análisis.
-- Rango incompleto: mensaje informativo para completar ambas fechas.
-- Sin pedidos seleccionados: advertencia para ampliar fechas o ciudades.
-- Sin entregados: avisos específicos en ventas y puntualidad; no se inventan observaciones.
-- CSV inválido: error de validación visible. Fallo cloud: error con orientación sobre endpoint, credenciales, bucket y objeto.
-- Datos válidos: confirmación con total y selección en Datos y metodología.
+Mensajes nativos cubren CSV pendiente/inválido, rango incompleto, selección vacía, ausencia de entregados y configuración o fallo R2. Demostración identifica los datos sintéticos. CSV permanece en sesión; R2 se lee sin modificar el objeto. Tablas sin índice y descargas CSV/JSON corresponden a la selección activa.
 
-Demostración mantiene el aviso «Datos sintéticos de demostración. No representan una empresa real.». CSV aclara que el archivo solo dura en la sesión; cloud aclara que el bucket privado se lee sin modificar el archivo. El pie recuerda usar datos sintéticos o autorizados e importes en bolivianos.
-
-La presentación preserva las fórmulas de `cloudtrack/analytics.py`: ventas y ticket medio consideran entregados; puntualidad usa entregados en fecha prometida o antes; días son calendario; retraso medio considera solo tardías; los filtros usan `order_date`. Los helpers de presentación dan estilo y observaciones descriptivas sin sustituir esas fórmulas.
+Se conservan fórmulas de analítica, almacenamiento y reporting, sin nuevas dependencias. Ventas y ticket consideran entregados; puntualidad compara fecha real y prometida; los filtros usan fecha del pedido. El rediseño presenta esos resultados sin redefinirlos.
 
 ## Do's and Don'ts
 
 ### Do
 
-- Conservar identidad, componentes nativos y tema claro para exposición.
-- Mantener unidad, fuente, denominador y alcance de filtros junto a los resultados.
-- Mostrar empates, ceros y ausencia de datos explícitamente.
-- Preservar fórmulas y aviso de datos sintéticos en demostración.
-- Revisar indicadores, pestañas y controles después de actualizar Streamlit.
+- Do mantener sincronizados JSON de color, CSS, Plotly y tema nativo.
+- Do conservar etiquetas, unidades, fuente, denominadores y estados sin datos.
+- Do mantener controles nativos, foco visible y reducción de movimiento.
+- Do revisar móvil, etiquetas largas y widgets tras actualizar Streamlit.
 
 ### Don't
 
-- Convertir observaciones descriptivas en causalidad o predicción.
-- Mostrar un porcentaje o promedio inexistente como cero.
-- Introducir marca, escala tipográfica o estado visual sin evidencia de implementación.
-- Asumir que el CSS personalizado constituye una API estable del framework.
+- Don't restablecer el verde como identidad principal.
+- Don't usar color como identificador único ni prometer colores únicos para más de ocho categorías.
+- Don't convertir insights en causalidad o predicción ni ausencia de promedio en cero.
+- Don't presentar esta documentación como auditoría WCAG completa o aprobación del revisor.
 
-**Validación y límites.** La revisión local incluye capturas de escritorio y Entregas a ancho 1440, y móvil a ancho 390; el hallazgo de contraste se resolvió con opacidad plena en captions. No se ha probado lector de pantalla ni otros dispositivos físicos. El CSS depende de `data-testid` de Streamlit, atributos BaseWeb y contenedores con key; los primeros dos son detalles internos susceptibles a cambios. Algunas reglas tipográficas, captions, métricas y foco son globales. La regla de overflow de Plotly puede recortar contenido que exceda el contenedor y debe revisarse con etiquetas largas. La paleta auxiliar de Plotly mantiene la divergencia descrita y los widgets mantienen estados nativos. Esta actualización se limita a `DESIGN.md`: no genera sidecar ni cambia código, datos o cálculos.
+**Evidencia registrada y límites no canonizados.** Se registraron 57 pruebas aprobadas; navegador en siete anchos de 375 a 1440, las tres pestañas sin desbordamiento horizontal de página ni errores JS; carga real de CSV demo, rechazo de CSV inválido y fuente R2 real con 600 pedidos usando el entorno existente; foco y reducción de movimiento verificados. Las seis capturas completas y los resultados están en `.impeccable/review/`. Son comprobaciones registradas de la sesión, no repetidas por esta documentación. La revisión independiente dio disposición `ship` a las seis correcciones solicitadas y al contraste de tags; ese veredicto cubre esos ajustes. El CSS usa selectores internos Streamlit/BaseWeb y contenedores con key, sujetos a cambios. No hubo pruebas en dispositivos físicos ni lector de pantalla; los resultados no acreditan cobertura WCAG exhaustiva. Estos límites no son reglas de diseño.

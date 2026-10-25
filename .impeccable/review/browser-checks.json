@@ -1,0 +1,866 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "tab": "Ventas",
+      "viewport": 1440,
+      "body": 1440,
+      "main": 1140,
+      "scroll": 1140,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "507",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "49.7%",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "1,056.14",
+          "width": 223,
+          "scroll": 223
+        }
+      ],
+      "grid": "257px 257px 257px 257px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "tab": "Entregas",
+      "viewport": 1440,
+      "body": 1440,
+      "main": 1140,
+      "scroll": 1140,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "507",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "49.7%",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "1,056.14",
+          "width": 223,
+          "scroll": 223
+        }
+      ],
+      "grid": "257px 257px 257px 257px",
+      "tables": [
+        {
+          "width": 1076,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "tab": "Datos y metodología",
+      "viewport": 1440,
+      "body": 1440,
+      "main": 1140,
+      "scroll": 1140,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "507",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "49.7%",
+          "width": 223,
+          "scroll": 223
+        },
+        {
+          "text": "1,056.14",
+          "width": 223,
+          "scroll": 223
+        }
+      ],
+      "grid": "257px 257px 257px 257px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 1076,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "tab": "Ventas",
+      "viewport": 1366,
+      "body": 1366,
+      "main": 1066,
+      "scroll": 1066,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "507",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "49.7%",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "1,056.14",
+          "width": 205,
+          "scroll": 205
+        }
+      ],
+      "grid": "238.5px 238.5px 238.5px 238.5px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "tab": "Entregas",
+      "viewport": 1366,
+      "body": 1366,
+      "main": 1066,
+      "scroll": 1066,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "507",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "49.7%",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "1,056.14",
+          "width": 205,
+          "scroll": 205
+        }
+      ],
+      "grid": "238.5px 238.5px 238.5px 238.5px",
+      "tables": [
+        {
+          "width": 1002,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1366,
+      "tab": "Datos y metodología",
+      "viewport": 1366,
+      "body": 1366,
+      "main": 1066,
+      "scroll": 1066,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "507",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "49.7%",
+          "width": 205,
+          "scroll": 205
+        },
+        {
+          "text": "1,056.14",
+          "width": 205,
+          "scroll": 205
+        }
+      ],
+      "grid": "238.5px 238.5px 238.5px 238.5px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 1002,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "tab": "Ventas",
+      "viewport": 1024,
+      "body": 1024,
+      "main": 724,
+      "scroll": 724,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "507",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "49.7%",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "1,056.14",
+          "width": 296,
+          "scroll": 296
+        }
+      ],
+      "grid": "330px 330px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "tab": "Entregas",
+      "viewport": 1024,
+      "body": 1024,
+      "main": 724,
+      "scroll": 724,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "507",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "49.7%",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "1,056.14",
+          "width": 296,
+          "scroll": 296
+        }
+      ],
+      "grid": "330px 330px",
+      "tables": [
+        {
+          "width": 676,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "tab": "Datos y metodología",
+      "viewport": 1024,
+      "body": 1024,
+      "main": 724,
+      "scroll": 724,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "507",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "49.7%",
+          "width": 296,
+          "scroll": 296
+        },
+        {
+          "text": "1,056.14",
+          "width": 296,
+          "scroll": 296
+        }
+      ],
+      "grid": "330px 330px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 676,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "tab": "Ventas",
+      "viewport": 768,
+      "body": 768,
+      "main": 767,
+      "scroll": 767,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "507",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "49.7%",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "1,056.14",
+          "width": 318,
+          "scroll": 318
+        }
+      ],
+      "grid": "351.5px 351.5px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "tab": "Entregas",
+      "viewport": 768,
+      "body": 768,
+      "main": 767,
+      "scroll": 767,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "507",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "49.7%",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "1,056.14",
+          "width": 318,
+          "scroll": 318
+        }
+      ],
+      "grid": "351.5px 351.5px",
+      "tables": [
+        {
+          "width": 719,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "tab": "Datos y metodología",
+      "viewport": 768,
+      "body": 768,
+      "main": 767,
+      "scroll": 767,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "507",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "49.7%",
+          "width": 318,
+          "scroll": 318
+        },
+        {
+          "text": "1,056.14",
+          "width": 318,
+          "scroll": 318
+        }
+      ],
+      "grid": "351.5px 351.5px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 719,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "tab": "Ventas",
+      "viewport": 430,
+      "body": 430,
+      "main": 430,
+      "scroll": 430,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "507",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "49.7%",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "1,056.14",
+          "width": 168,
+          "scroll": 168
+        }
+      ],
+      "grid": "193.797px 193.812px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "tab": "Entregas",
+      "viewport": 430,
+      "body": 430,
+      "main": 430,
+      "scroll": 430,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "507",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "49.7%",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "1,056.14",
+          "width": 168,
+          "scroll": 168
+        }
+      ],
+      "grid": "193.797px 193.812px",
+      "tables": [
+        {
+          "width": 398,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "tab": "Datos y metodología",
+      "viewport": 430,
+      "body": 430,
+      "main": 430,
+      "scroll": 430,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "507",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "49.7%",
+          "width": 168,
+          "scroll": 168
+        },
+        {
+          "text": "1,056.14",
+          "width": 168,
+          "scroll": 168
+        }
+      ],
+      "grid": "193.797px 193.812px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 398,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "tab": "Ventas",
+      "viewport": 390,
+      "body": 390,
+      "main": 390,
+      "scroll": 390,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "507",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "49.7%",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "1,056.14",
+          "width": 148,
+          "scroll": 148
+        }
+      ],
+      "grid": "173.797px 173.812px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "tab": "Entregas",
+      "viewport": 390,
+      "body": 390,
+      "main": 390,
+      "scroll": 390,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "507",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "49.7%",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "1,056.14",
+          "width": 148,
+          "scroll": 148
+        }
+      ],
+      "grid": "173.797px 173.812px",
+      "tables": [
+        {
+          "width": 358,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "tab": "Datos y metodología",
+      "viewport": 390,
+      "body": 390,
+      "main": 390,
+      "scroll": 390,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "507",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "49.7%",
+          "width": 148,
+          "scroll": 148
+        },
+        {
+          "text": "1,056.14",
+          "width": 148,
+          "scroll": 148
+        }
+      ],
+      "grid": "173.797px 173.812px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 358,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "tab": "Ventas",
+      "viewport": 375,
+      "body": 375,
+      "main": 375,
+      "scroll": 375,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "507",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "49.7%",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "1,056.14",
+          "width": 140,
+          "scroll": 140
+        }
+      ],
+      "grid": "166.297px 166.312px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "tab": "Entregas",
+      "viewport": 375,
+      "body": 375,
+      "main": 375,
+      "scroll": 375,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "507",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "49.7%",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "1,056.14",
+          "width": 140,
+          "scroll": 140
+        }
+      ],
+      "grid": "166.297px 166.312px",
+      "tables": [
+        {
+          "width": 343,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "tab": "Datos y metodología",
+      "viewport": 375,
+      "body": 375,
+      "main": 375,
+      "scroll": 375,
+      "cards": [
+        {
+          "text": "535,460.90",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "507",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "49.7%",
+          "width": 140,
+          "scroll": 140
+        },
+        {
+          "text": "1,056.14",
+          "width": 140,
+          "scroll": 140
+        }
+      ],
+      "grid": "166.297px 166.312px",
+      "tables": [
+        {
+          "width": 0,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        },
+        {
+          "width": 343,
+          "html": "<div class=\"stDataFrame st-emotion-cache-4e0e5w ee274890\" data-testid=\"stDataFrame\"><div class=\"stElementToolbar st-emotion-cache-qwnnl1 e1db0a190\" data-testid=\"stElementToolbar\" target=\".ee274890\"><div data-testid=\"stElementToolbarButtonContainer\" class=\"st-emotion-cache-whnubl e1db0a191\"><div><div data-testid=\"stElementToolbarButton\"><span data-testid=\"stTooltipHoverTarget\" class=\"stTooltipHoverTarget\" style=\"display: flex; flex-direction: row;"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

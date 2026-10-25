@@ -1,0 +1,31 @@
+[
+  {
+    "check": "Filtro de ciudad en navegador",
+    "passed": true
+  },
+  {
+    "check": "Restablecimiento de filtros",
+    "passed": true
+  },
+  {
+    "check": "Carga real de CSV demo",
+    "passed": true
+  },
+  {
+    "check": "CSV inválido muestra error controlado",
+    "passed": true
+  },
+  {
+    "check": "Control de fuente cloud",
+    "passed": true,
+    "state": "CSV validado: 600 pedidos. Selección actual: 600 pedidos."
+  },
+  {
+    "check": "prefers-reduced-motion desactiva transiciones",
+    "passed": true
+  },
+  {
+    "check": "Foco visible de pestañas",
+    "passed": true
+  }
+]
