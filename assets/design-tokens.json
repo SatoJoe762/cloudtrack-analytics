@@ -1,0 +1,20 @@
+{
+  "primary": "#4F46E5",
+  "primary-hover": "#4338CA",
+  "secondary": "#2563EB",
+  "accent": "#0891B2",
+  "success": "#059669",
+  "warning": "#B45309",
+  "danger": "#DC2626",
+  "background": "#F5F7FC",
+  "surface": "#FFFFFF",
+  "ink": "#172033",
+  "muted": "#64748B",
+  "line": "#E2E8F0",
+  "soft": "#EEF2FF",
+  "sidebar": "#151E38",
+  "sidebar-surface": "#202C49",
+  "sidebar-ink": "#F1F5FF",
+  "sidebar-muted": "#B7C5DF",
+  "chart-colors": ["#4F46E5", "#0891B2", "#2563EB", "#B45309", "#9333EA", "#059669", "#DB2777", "#475569"]
+}

@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-25T03:35:06Z",
+  "title": "Design System: CloudTrack Analytics",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Índigo de análisis",
+        "tonalRamp": [
+          "oklch(15% 0.2301 276.97)",
+          "oklch(26% 0.2301 276.97)",
+          "oklch(38% 0.2301 276.97)",
+          "oklch(49% 0.2301 276.97)",
+          "oklch(61% 0.2301 276.97)",
+          "oklch(72% 0.2301 276.97)",
+          "oklch(84% 0.2301 276.97)",
+          "oklch(95% 0.2301 276.97)"
+        ]
+      },
+      "primary-hover": {
+        "role": "primary",
+        "displayName": "Índigo profundo",
+        "tonalRamp": [
+          "oklch(15% 0.2146 277.02)",
+          "oklch(26% 0.2146 277.02)",
+          "oklch(38% 0.2146 277.02)",
+          "oklch(49% 0.2146 277.02)",
+          "oklch(61% 0.2146 277.02)",
+          "oklch(72% 0.2146 277.02)",
+          "oklch(84% 0.2146 277.02)",
+          "oklch(95% 0.2146 277.02)"
+        ]
+      },
+      "secondary": {
+        "role": "secondary",
+        "displayName": "Azul de cumplimiento",
+        "tonalRamp": [
+          "oklch(15% 0.2152 262.88)",
+          "oklch(26% 0.2152 262.88)",
+          "oklch(38% 0.2152 262.88)",
+          "oklch(49% 0.2152 262.88)",
+          "oklch(61% 0.2152 262.88)",
+          "oklch(72% 0.2152 262.88)",
+          "oklch(84% 0.2152 262.88)",
+          "oklch(95% 0.2152 262.88)"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Cian de apoyo",
+        "tonalRamp": [
+          "oklch(15% 0.1109 221.72)",
+          "oklch(26% 0.1109 221.72)",
+          "oklch(38% 0.1109 221.72)",
+          "oklch(49% 0.1109 221.72)",
+          "oklch(61% 0.1109 221.72)",
+          "oklch(72% 0.1109 221.72)",
+          "oklch(84% 0.1109 221.72)",
+          "oklch(95% 0.1109 221.72)"
+        ]
+      },
+      "success": {
+        "role": "secondary",
+        "displayName": "Verde de entrega",
+        "tonalRamp": [
+          "oklch(15% 0.1274 163.23)",
+          "oklch(26% 0.1274 163.23)",
+          "oklch(38% 0.1274 163.23)",
+          "oklch(49% 0.1274 163.23)",
+          "oklch(61% 0.1274 163.23)",
+          "oklch(72% 0.1274 163.23)",
+          "oklch(84% 0.1274 163.23)",
+          "oklch(95% 0.1274 163.23)"
+        ]
+      },
+      "warning": {
+        "role": "secondary",
+        "displayName": "Ámbar de atención",
+        "tonalRamp": [
+          "oklch(15% 0.1455 49.00)",
+          "oklch(26% 0.1455 49.00)",
+          "oklch(38% 0.1455 49.00)",
+          "oklch(49% 0.1455 49.00)",
+          "oklch(61% 0.1455 49.00)",
+          "oklch(72% 0.1455 49.00)",
+          "oklch(84% 0.1455 49.00)",
+          "oklch(95% 0.1455 49.00)"
+        ]
+      },
+      "danger": {
+        "role": "secondary",
+        "displayName": "Rojo de cancelación",
+        "tonalRamp": [
+          "oklch(15% 0.2152 27.33)",
+          "oklch(26% 0.2152 27.33)",
+          "oklch(38% 0.2152 27.33)",
+          "oklch(49% 0.2152 27.33)",
+          "oklch(61% 0.2152 27.33)",
+          "oklch(72% 0.2152 27.33)",
+          "oklch(84% 0.2152 27.33)",
+          "oklch(95% 0.2152 27.33)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Fondo bruma",
+        "tonalRamp": [
+          "oklch(15% 0.0070 268.55)",
+          "oklch(26% 0.0070 268.55)",
+          "oklch(38% 0.0070 268.55)",
+          "oklch(49% 0.0070 268.55)",
+          "oklch(61% 0.0070 268.55)",
+          "oklch(72% 0.0070 268.55)",
+          "oklch(84% 0.0070 268.55)",
+          "oklch(95% 0.0070 268.55)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Blanco de tarjeta",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(38% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(72% 0.0000 0.00)",
+          "oklch(84% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "tonalRamp": [
+          "oklch(15% 0.0388 264.35)",
+          "oklch(26% 0.0388 264.35)",
+          "oklch(38% 0.0388 264.35)",
+          "oklch(49% 0.0388 264.35)",
+          "oklch(61% 0.0388 264.35)",
+          "oklch(72% 0.0388 264.35)",
+          "oklch(84% 0.0388 264.35)",
+          "oklch(95% 0.0388 264.35)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Texto auxiliar",
+        "tonalRamp": [
+          "oklch(15% 0.0407 257.42)",
+          "oklch(26% 0.0407 257.42)",
+          "oklch(38% 0.0407 257.42)",
+          "oklch(49% 0.0407 257.42)",
+          "oklch(61% 0.0407 257.42)",
+          "oklch(72% 0.0407 257.42)",
+          "oklch(84% 0.0407 257.42)",
+          "oklch(95% 0.0407 257.42)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Línea suave",
+        "tonalRamp": [
+          "oklch(15% 0.0126 255.51)",
+          "oklch(26% 0.0126 255.51)",
+          "oklch(38% 0.0126 255.51)",
+          "oklch(49% 0.0126 255.51)",
+          "oklch(61% 0.0126 255.51)",
+          "oklch(72% 0.0126 255.51)",
+          "oklch(84% 0.0126 255.51)",
+          "oklch(95% 0.0126 255.51)"
+        ]
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Lavado índigo",
+        "tonalRamp": [
+          "oklch(15% 0.0179 272.31)",
+          "oklch(26% 0.0179 272.31)",
+          "oklch(38% 0.0179 272.31)",
+          "oklch(49% 0.0179 272.31)",
+          "oklch(61% 0.0179 272.31)",
+          "oklch(72% 0.0179 272.31)",
+          "oklch(84% 0.0179 272.31)",
+          "oklch(95% 0.0179 272.31)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Azul profundo",
+        "tonalRamp": [
+          "oklch(15% 0.0516 268.00)",
+          "oklch(26% 0.0516 268.00)",
+          "oklch(38% 0.0516 268.00)",
+          "oklch(49% 0.0516 268.00)",
+          "oklch(61% 0.0516 268.00)",
+          "oklch(72% 0.0516 268.00)",
+          "oklch(84% 0.0516 268.00)",
+          "oklch(95% 0.0516 268.00)"
+        ]
+      },
+      "sidebar-surface": {
+        "role": "neutral",
+        "displayName": "Superficie lateral",
+        "tonalRamp": [
+          "oklch(15% 0.0555 266.07)",
+          "oklch(26% 0.0555 266.07)",
+          "oklch(38% 0.0555 266.07)",
+          "oklch(49% 0.0555 266.07)",
+          "oklch(61% 0.0555 266.07)",
+          "oklch(72% 0.0555 266.07)",
+          "oklch(84% 0.0555 266.07)",
+          "oklch(95% 0.0555 266.07)"
+        ]
+      },
+      "sidebar-ink": {
+        "role": "neutral",
+        "displayName": "Tinta clara",
+        "tonalRamp": [
+          "oklch(15% 0.0140 268.49)",
+          "oklch(26% 0.0140 268.49)",
+          "oklch(38% 0.0140 268.49)",
+          "oklch(49% 0.0140 268.49)",
+          "oklch(61% 0.0140 268.49)",
+          "oklch(72% 0.0140 268.49)",
+          "oklch(84% 0.0140 268.49)",
+          "oklch(95% 0.0140 268.49)"
+        ]
+      },
+      "sidebar-muted": {
+        "role": "neutral",
+        "displayName": "Texto lateral auxiliar",
+        "tonalRamp": [
+          "oklch(15% 0.0397 262.90)",
+          "oklch(26% 0.0397 262.90)",
+          "oklch(38% 0.0397 262.90)",
+          "oklch(49% 0.0397 262.90)",
+          "oklch(61% 0.0397 262.90)",
+          "oklch(72% 0.0397 262.90)",
+          "oklch(84% 0.0397 262.90)",
+          "oklch(95% 0.0397 262.90)"
+        ]
+      },
+      "category-violet": {
+        "role": "secondary",
+        "displayName": "Violeta de categoría",
+        "tonalRamp": [
+          "oklch(15% 0.2525 302.32)",
+          "oklch(26% 0.2525 302.32)",
+          "oklch(38% 0.2525 302.32)",
+          "oklch(49% 0.2525 302.32)",
+          "oklch(61% 0.2525 302.32)",
+          "oklch(72% 0.2525 302.32)",
+          "oklch(84% 0.2525 302.32)",
+          "oklch(95% 0.2525 302.32)"
+        ]
+      },
+      "category-pink": {
+        "role": "secondary",
+        "displayName": "Rosa de categoría",
+        "tonalRamp": [
+          "oklch(15% 0.2180 0.58)",
+          "oklch(26% 0.2180 0.58)",
+          "oklch(38% 0.2180 0.58)",
+          "oklch(49% 0.2180 0.58)",
+          "oklch(61% 0.2180 0.58)",
+          "oklch(72% 0.2180 0.58)",
+          "oklch(84% 0.2180 0.58)",
+          "oklch(95% 0.2180 0.58)"
+        ]
+      },
+      "category-slate": {
+        "role": "secondary",
+        "displayName": "Pizarra de categoría",
+        "tonalRamp": [
+          "oklch(15% 0.0374 257.28)",
+          "oklch(26% 0.0374 257.28)",
+          "oklch(38% 0.0374 257.28)",
+          "oklch(49% 0.0374 257.28)",
+          "oklch(61% 0.0374 257.28)",
+          "oklch(72% 0.0374 257.28)",
+          "oklch(84% 0.0374 257.28)",
+          "oklch(95% 0.0374 257.28)"
+        ]
+      },
+      "sidebar-focus": {
+        "role": "neutral",
+        "displayName": "Foco lateral",
+        "tonalRamp": [
+          "oklch(15% 0.1041 274.71)",
+          "oklch(26% 0.1041 274.71)",
+          "oklch(38% 0.1041 274.71)",
+          "oklch(49% 0.1041 274.71)",
+          "oklch(61% 0.1041 274.71)",
+          "oklch(72% 0.1041 274.71)",
+          "oklch(84% 0.1041 274.71)",
+          "oklch(95% 0.1041 274.71)"
+        ]
+      },
+      "sidebar-border": {
+        "role": "neutral",
+        "displayName": "Borde lateral",
+        "tonalRamp": [
+          "oklch(15% 0.0525 262.02)",
+          "oklch(26% 0.0525 262.02)",
+          "oklch(38% 0.0525 262.02)",
+          "oklch(49% 0.0525 262.02)",
+          "oklch(61% 0.0525 262.02)",
+          "oklch(72% 0.0525 262.02)",
+          "oklch(84% 0.0525 262.02)",
+          "oklch(95% 0.0525 262.02)"
+        ]
+      },
+      "sidebar-tag": {
+        "role": "neutral",
+        "displayName": "Tag lateral",
+        "tonalRamp": [
+          "oklch(15% 0.0619 264.44)",
+          "oklch(26% 0.0619 264.44)",
+          "oklch(38% 0.0619 264.44)",
+          "oklch(49% 0.0619 264.44)",
+          "oklch(61% 0.0619 264.44)",
+          "oklch(72% 0.0619 264.44)",
+          "oklch(84% 0.0619 264.44)",
+          "oklch(95% 0.0619 264.44)"
+        ]
+      },
+      "sidebar-divider": {
+        "role": "neutral",
+        "displayName": "Divisor lateral",
+        "tonalRamp": [
+          "oklch(15% 0.0492 265.66)",
+          "oklch(26% 0.0492 265.66)",
+          "oklch(38% 0.0492 265.66)",
+          "oklch(49% 0.0492 265.66)",
+          "oklch(61% 0.0492 265.66)",
+          "oklch(72% 0.0492 265.66)",
+          "oklch(84% 0.0492 265.66)",
+          "oklch(95% 0.0492 265.66)"
+        ]
+      },
+      "sidebar-hover": {
+        "role": "neutral",
+        "displayName": "Hover lateral",
+        "tonalRamp": [
+          "oklch(15% 0.0594 264.43)",
+          "oklch(26% 0.0594 264.43)",
+          "oklch(38% 0.0594 264.43)",
+          "oklch(49% 0.0594 264.43)",
+          "oklch(61% 0.0594 264.43)",
+          "oklch(72% 0.0594 264.43)",
+          "oklch(84% 0.0594 264.43)",
+          "oklch(95% 0.0594 264.43)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Cabecera",
+        "purpose": "Título del panel; compacto en móvil."
+      },
+      "headline": {
+        "displayName": "Sección",
+        "purpose": "Agrupación de análisis."
+      },
+      "title": {
+        "displayName": "Título de gráfico",
+        "purpose": "Identificación de cada tarjeta gráfica."
+      },
+      "metric": {
+        "displayName": "Cifra KPI",
+        "purpose": "Cifras tabulares y estados sin entregas."
+      },
+      "label": {
+        "displayName": "Etiqueta KPI",
+        "purpose": "Nombre y unidad."
+      },
+      "caption": {
+        "displayName": "Contexto",
+        "purpose": "Fuente, denominador y alcance de lectura."
+      },
+      "chart": {
+        "displayName": "Gráfico",
+        "purpose": "Tipografía compartida de Plotly."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ct-shadow",
+        "value": "0 3px 12px rgb(23 32 51 / 5%)",
+        "purpose": "Declarado en CSS; no aplicado a las tarjetas actuales."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ct-transition",
+        "value": "160ms ease-out",
+        "purpose": "Transiciones de color/borde; desactivadas con prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "kpi-two-columns",
+        "value": "1250px"
+      },
+      {
+        "name": "chart-stack-upper",
+        "value": "1050px"
+      },
+      {
+        "name": "chart-stack-lower",
+        "value": "641px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Restablecer filtros",
+      "kind": "button",
+      "refersTo": "button-reset",
+      "description": "Muestra del botón lateral nativo; el runtime y el reset pertenecen a Streamlit.",
+      "html": "<button class=\"ds-reset\">Restablecer filtros</button>",
+      "css": ".ds-reset{min-height:44px;width:100%;background:var(--ct-sidebar-surface,#202C49);color:var(--ct-sidebar-ink,#F1F5FF);border:1px solid var(--ct-sidebar-border,#40506D);border-radius:var(--ct-control-radius,8px);font-family:var(--ct-font, sans-serif);font-size:.82rem;transition:background-color var(--ct-transition,160ms ease-out),border-color var(--ct-transition,160ms ease-out)}.ds-reset:hover{background:var(--ct-sidebar-hover,#2C3B5B);border-color:var(--ct-sidebar-focus,#A5B4FC)}.ds-reset:focus-visible{outline:2px solid var(--ct-sidebar-focus,#A5B4FC);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-reset{transition:none}}"
+    },
+    {
+      "name": "Descarga",
+      "kind": "button",
+      "refersTo": "button-download",
+      "description": "Acción de exportación; la muestra visual no genera un archivo.",
+      "html": "<button class=\"ds-download\">Descargar pedidos filtrados</button>",
+      "css": ".ds-download{min-height:44px;background:var(--ct-surface,#FFFFFF);color:var(--ct-primary,#4F46E5);border:1px solid var(--ct-line,#E2E8F0);border-radius:var(--ct-control-radius,8px);font-family:var(--ct-font,sans-serif);transition:background-color var(--ct-transition,160ms ease-out),border-color var(--ct-transition,160ms ease-out)}.ds-download:hover{background:var(--ct-soft,#EEF2FF);border-color:var(--ct-primary,#4F46E5)}.ds-download:focus-visible{outline:2px solid var(--ct-primary,#4F46E5);outline-offset:3px}@media(prefers-reduced-motion:reduce){.ds-download{transition:none}}"
+    },
+    {
+      "name": "Rango de fechas",
+      "kind": "input",
+      "refersTo": "input-date",
+      "description": "Muestra visual DD/MM/YYYY; la aplicación usa el calendario nativo de Streamlit, no este input de texto.",
+      "html": "<label class=\"ds-date\">Fecha del pedido<input class=\"ds-date-field\" aria-label=\"Fecha del pedido\" value=\"01/01/2026 — 31/03/2026\"></label>",
+      "css": ".ds-date{display:block;color:var(--ct-sidebar-ink,#F1F5FF);background:var(--ct-sidebar,#151E38);font-family:var(--ct-font,sans-serif);font-size:.8rem;font-weight:550}.ds-date-field{width:100%;background:var(--ct-sidebar-surface,#202C49);border:1px solid var(--ct-sidebar-border,#40506D);border-radius:var(--ct-control-radius,8px);color:var(--ct-sidebar-ink,#F1F5FF);font-family:var(--ct-font,sans-serif);font-size:.75rem;caret-color:var(--ct-sidebar-focus,#A5B4FC)}.ds-date-field:focus-visible{outline:2px solid var(--ct-sidebar-focus,#A5B4FC);outline-offset:3px}"
+    },
+    {
+      "name": "Pestañas de análisis",
+      "kind": "nav",
+      "refersTo": "tabs",
+      "description": "Estados visuales; teclado, selección y paneles reales pertenecen a Streamlit/BaseWeb.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\" aria-label=\"Análisis\"><button class=\"ds-tab\" role=\"tab\" aria-selected=\"true\">Ventas</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Entregas</button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Datos y metodología</button></div>",
+      "css": ".ds-tabs{display:flex;gap:var(--ct-space-5,1.5rem);border-bottom:1px solid var(--ct-line,#E2E8F0)}.ds-tab{min-height:46px;background:transparent;border:0;color:var(--ct-muted,#64748B);padding:.25rem .1rem .65rem;font-family:var(--ct-font,sans-serif);font-size:.85rem;transition:color var(--ct-transition,160ms ease-out),background-color var(--ct-transition,160ms ease-out)}.ds-tab[aria-selected=true]{color:var(--ct-primary,#4F46E5);font-weight:650;border-bottom:2px solid var(--ct-primary,#4F46E5)}.ds-tab:hover{color:var(--ct-primary,#4F46E5);background:var(--ct-soft,#EEF2FF)}.ds-tab:focus-visible{outline:2px solid var(--ct-primary,#4F46E5);outline-offset:3px}@media(max-width:640px){.ds-tabs{gap:.85rem}.ds-tab{font-size:.76rem;white-space:nowrap}}@media(prefers-reduced-motion:reduce){.ds-tab{transition:none}}"
+    },
+    {
+      "name": "Fuente de datos",
+      "kind": "chip",
+      "refersTo": "source",
+      "description": "Etiqueta informativa sin acción ni estado hover.",
+      "html": "<span class=\"ds-source\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0\"/></svg>Datos de demostración</span>",
+      "css": ".ds-source{display:inline-flex;align-items:center;gap:.5rem;background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#E2E8F0);border-radius:var(--ct-control-radius,8px);padding:.65rem .85rem;font-family:var(--ct-font,sans-serif);font-size:.78rem;font-weight:550;color:var(--ct-ink,#172033)}.ds-source svg{width:16px;height:16px;color:var(--ct-primary,#4F46E5)}@media(max-width:640px){.ds-source{padding:.5rem .65rem;font-size:.75rem}}"
+    },
+    {
+      "name": "Tarjeta KPI",
+      "kind": "card",
+      "refersTo": "kpi",
+      "description": "Muestra de ventas; la aplicación mantiene st.metric y su ayuda nativa. Cifra ilustrativa de demostración.",
+      "html": "<article class=\"ds-kpi\"><span class=\"ds-kpi-icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"3\"/><path d=\"M3 10h18m-6 5h3\"/></svg></span><p class=\"ds-kpi-label\">Ventas entregadas · BOB</p><p class=\"ds-kpi-value\">535,460.90</p><p class=\"ds-kpi-context\">Importe total, sin costo de envío</p></article>",
+      "css": ".ds-kpi{position:relative;min-height:148px;padding:1.15rem 1rem .9rem;border:1px solid var(--ct-line,#E2E8F0);border-radius:var(--ct-radius,14px);background:var(--ct-surface,#FFFFFF);font-family:var(--ct-font,sans-serif);transition:border-color var(--ct-transition,160ms ease-out),background-color var(--ct-transition,160ms ease-out)}.ds-kpi:hover{border-color:var(--ct-sidebar-focus,#A5B4FC);background:#FEFEFF}.ds-kpi-label{padding-right:1.6rem;min-height:2rem;font-size:.78rem;font-weight:550;color:var(--ct-muted,#64748B)}.ds-kpi-value{color:var(--ct-primary,#4F46E5);font-size:1.95rem;font-weight:650;letter-spacing:-.035em;line-height:1.25;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.ds-kpi-context{font-size:.72rem;color:var(--ct-muted,#64748B);margin:.15rem 0 0}.ds-kpi-icon{position:absolute;top:1.05rem;right:1rem;color:var(--ct-primary,#4F46E5)}.ds-kpi-icon svg{width:20px;height:20px}@media(max-width:640px){.ds-kpi{padding:.85rem .75rem .75rem;min-height:140px}.ds-kpi-icon{display:none}.ds-kpi-label{font-size:.72rem;min-height:2.5rem;padding-right:.9rem}.ds-kpi-value{font-size:1.5rem}.ds-kpi-context{font-size:.65rem;padding-right:1.1rem}}@media(prefers-reduced-motion:reduce){.ds-kpi{transition:none}}"
+    },
+    {
+      "name": "Panel de insights",
+      "kind": "card",
+      "refersTo": "insights",
+      "description": "Dos observaciones en una sola superficie, con divisor adaptable; contenido ilustrativo de demo.",
+      "html": "<section class=\"ds-insights\"><h2 class=\"ds-insights-heading\">Lectura de la selección</h2><div class=\"ds-insights-grid\"><div class=\"ds-insight\"><p class=\"ds-insight-title\">Mayor venta por categoría</p><p class=\"ds-insight-value\">Moda</p><p class=\"ds-insight-detail\">Ventas entregadas de la selección.</p></div><div class=\"ds-insight\"><p class=\"ds-insight-title\">Menor puntualidad por ciudad</p><p class=\"ds-insight-value\">La Paz</p><p class=\"ds-insight-detail\">Comparación entre entregados.</p></div></div><p class=\"ds-insights-note\">Lectura descriptiva. No implica causalidad ni predicción.</p></section>",
+      "css": ".ds-insights{background:var(--ct-surface,#FFFFFF);border:1px solid var(--ct-line,#E2E8F0);border-radius:var(--ct-radius,14px);padding:1rem 1.25rem .75rem;font-family:var(--ct-font,sans-serif)}.ds-insights-heading{font-size:.95rem;color:var(--ct-ink,#172033);margin:0 0 .75rem}.ds-insights-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}.ds-insight{padding-bottom:.75rem}.ds-insight+.ds-insight{border-left:1px solid var(--ct-line,#E2E8F0);padding-left:1.5rem}.ds-insight-title{font-size:.75rem;color:var(--ct-muted,#64748B);margin:0 0 .2rem}.ds-insight-value{font-size:1.2rem;line-height:1.3;font-weight:650;color:var(--ct-ink,#172033);margin:0;overflow-wrap:anywhere}.ds-insight-detail{font-size:.78rem;line-height:1.55;color:var(--ct-muted,#64748B);margin:.3rem 0 0}.ds-insights-note{font-size:.7rem;color:var(--ct-muted,#64748B)}@media(max-width:640px){.ds-insights{padding:1rem}.ds-insights-grid{grid-template-columns:1fr;gap:.8rem}.ds-insight+.ds-insight{border-left:0;border-top:1px solid var(--ct-line,#E2E8F0);padding:.8rem 0 0}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La mesa de análisis BI",
+    "overview": "La dirección elegida combina la claridad de Power BI y Tableau con superficies SaaS: lateral azul profundo, acentos índigo y azul, fondo gris azulado y tarjetas blancas. La marca geométrica y los iconos lineales acompañan una lectura sobria de cifras, unidades y contexto.\n\nLa presentación conserva Streamlit como interfaz nativa. Fuente, selección y resultados verificables comparten un lenguaje visual; las observaciones son descriptivas. Este documento registra el rediseño implementado y reemplaza la anterior identidad verde.",
+    "keyCharacteristics": [
+      "Contraste entre lateral profundo y superficies claras.",
+      "Cifras tabulares, unidades visibles y etiquetas junto al color.",
+      "Tarjetas de borde fino y controles nativos.",
+      "Composición adaptable con iconos decorativos discretos."
+    ],
+    "rules": [
+      {
+        "name": "The Visible Meaning Rule",
+        "body": "Cada color de datos conserva nombre, unidad o etiqueta; el color por sí solo no identifica una categoría o estado.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do mantener sincronizados JSON de color, CSS, Plotly y tema nativo.",
+      "Do conservar etiquetas, unidades, fuente, denominadores y estados sin datos.",
+      "Do mantener controles nativos, foco visible y reducción de movimiento.",
+      "Do revisar móvil, etiquetas largas y widgets tras actualizar Streamlit."
+    ],
+    "donts": [
+      "Don't restablecer el verde como identidad principal.",
+      "Don't usar color como identificador único ni prometer colores únicos para más de ocho categorías.",
+      "Don't convertir insights en causalidad o predicción ni ausencia de promedio en cero.",
+      "Don't presentar esta documentación como auditoría WCAG completa o aprobación del revisor."
+    ]
+  }
+}

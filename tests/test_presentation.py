@@ -1,5 +1,7 @@
 import pandas as pd
 from cloudtrack.presentation import selection_insights
+from cloudtrack.presentation import category_colors, style_chart
+import plotly.express as px
 
 
 def test_insights_use_only_delivered_and_handle_ties_and_zero_sales():
@@ -29,3 +31,16 @@ def test_insights_use_only_delivered_and_handle_ties_and_zero_sales():
     assert 'empate' in city['title']
     assert selection_insights(frame.iloc[2:]) == []
     assert selection_insights(frame.iloc[:0]) == []
+
+
+def test_category_colors_are_deterministic_and_chart_values_are_preserved():
+    names = ['Moda', 'Tecnología', 'Hogar', 'Deportes']
+    colors = category_colors(names)
+    assert colors == category_colors(reversed(names))
+    assert len(set(colors.values())) == len(names)
+    figure = px.bar(x=[20, 80], y=['La Paz', 'Tarija'], orientation='h')
+    styled = style_chart(figure, percent=True, horizontal=True)
+    assert list(styled.data[0].x) == [20, 80]
+    assert list(styled.layout.xaxis.range) == [0, 105]
+    assert styled.layout.xaxis.showgrid
+    assert not styled.layout.yaxis.showgrid
