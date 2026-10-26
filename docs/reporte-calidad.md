@@ -1,14 +1,14 @@
-# Reporte reproducible del dataset demo
+# Reporte histórico de la referencia cloud original
 
-Resultado obtenido el 21 de octubre de 2026 con los 600 pedidos sintéticos incluidos. Es un análisis del ejemplo académico; no representa ventas o entregas de una empresa real.
+Resultado obtenido el 21 de octubre de 2026 con los 600 pedidos sintéticos originales, conservados en `data/orders_cloud_reference.csv`. La demo local actual tiene 100 pedidos distintos; este reporte no describe sus resultados ni garantiza que R2 siga conteniendo el archivo original. Es un análisis académico, no de una empresa real.
 
 ## Cómo reproducirlo
 
 Desde la raíz del repositorio:
 
 ```bash
-.venv/bin/python -m scripts.quality_report
-.venv/bin/python -m scripts.quality_report --json
+.venv/bin/python -m scripts.quality_report data/orders_cloud_reference.csv
+.venv/bin/python -m scripts.quality_report data/orders_cloud_reference.csv --json
 ```
 
 En Windows reemplazar el ejecutable por `.venv\Scripts\python.exe`. El [JSON de referencia](reporte-demo.json) registra el resultado completo. Si cambian el CSV, regenerar ese archivo y actualizar este documento; no presentar el ejemplo como un resultado de datos nuevos.

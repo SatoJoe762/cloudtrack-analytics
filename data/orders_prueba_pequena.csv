@@ -1,0 +1,9 @@
+order_id,order_date,city,category,amount_bob,shipping_cost_bob,status,promised_date,delivered_date
+PQ-4001,2026-07-01,El Alto,Hogar,180.00,12.00,entregado,2026-07-04,2026-07-03
+PQ-4002,2026-07-02,El Alto,Deportes,450.50,16.00,entregado,2026-07-05,2026-07-05
+PQ-4003,2026-07-03,Oruro,Hogar,225.00,14.00,entregado,2026-07-07,2026-07-09
+PQ-4004,2026-07-04,Oruro,Deportes,799.99,20.00,cancelado,2026-07-08,
+PQ-4005,2026-07-05,El Alto,Hogar,310.00,13.00,entregado,2026-07-09,2026-07-08
+PQ-4006,2026-07-06,Oruro,Deportes,520.00,17.00,en_transito,2026-07-11,
+PQ-4007,2026-07-07,El Alto,Deportes,640.00,18.00,entregado,2026-07-12,2026-07-14
+PQ-4008,2026-07-08,Oruro,Hogar,195.50,12.00,entregado,2026-07-13,2026-07-12

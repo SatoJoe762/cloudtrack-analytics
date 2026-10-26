@@ -1,5 +1,7 @@
 # Validación del proyecto
 
+Los resultados de 600 pedidos de esta página son históricos. La demostración local actual tiene 100 pedidos nuevos; la referencia original se conserva en `data/orders_cloud_reference.csv`. R2 puede contener otro CSV después de una carga manual.
+
 ## Integración real comprobada — 22 de octubre de 2026
 
 - Aplicación: [CloudTrack Analytics](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/), repositorio `SatoJoe762/cloudtrack-analytics`, rama main, entrada `app.py`.

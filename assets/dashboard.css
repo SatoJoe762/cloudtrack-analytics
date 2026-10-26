@@ -175,6 +175,8 @@ svg { flex-shrink: 0; }
 .st-key-delivery_metrics [data-testid="stMetricLabel"] { color: var(--ct-muted); }
 [data-testid="stDataFrame"], [data-testid="stExpander"] { border-radius: var(--ct-control-radius); }
 [data-testid="stExpander"] { background: var(--ct-surface); }
+[data-testid="stSidebar"] [data-testid="stExpander"] { background: var(--ct-sidebar-surface); border-color: #40506D; color: var(--ct-sidebar-ink); }
+[data-testid="stSidebar"] [data-testid="stExpanderDetails"] { background: var(--ct-sidebar-surface); }
 [data-testid="stButton"] button, [data-testid="stDownloadButton"] button { min-height: 44px; border-radius: var(--ct-control-radius); transition: background-color var(--ct-transition), border-color var(--ct-transition), color var(--ct-transition); }
 [data-testid="stDownloadButton"] button { background: var(--ct-surface); color: var(--ct-primary); border-color: var(--ct-line); }
 [data-testid="stDownloadButton"] button:hover { background: var(--ct-soft); border-color: var(--ct-primary); }

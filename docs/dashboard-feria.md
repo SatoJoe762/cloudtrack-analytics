@@ -1,5 +1,7 @@
 # Dashboard para la feria
 
+La demo local actual tiene 100 pedidos nuevos. Las comprobaciones y capturas de 600 pedidos que aparecen más abajo documentan el conjunto original, conservado en `data/orders_cloud_reference.csv`. Demostración y R2 se pueden releer cada 30 segundos con la sesión abierta; el control está en “Actualización de datos” del sidebar.
+
 La mejora conserva Streamlit y las fórmulas de ventas, puntualidad y retrasos. Cambia la presentación y agrega observaciones descriptivas para ayudar a explicar la selección.
 
 ## Qué cambia

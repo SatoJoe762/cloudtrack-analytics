@@ -6,13 +6,14 @@ APP = str(Path(__file__).resolve().parents[1] / 'app.py')
 
 
 def test_panel_filters_empty_selection_and_upload_prompt():
+    total = len(load_orders((Path(APP).parent / 'data/orders_demo.csv').read_bytes()))
     app = AppTest.from_file(APP).run(timeout=30)
     assert not app.exception
-    assert next(item.value for item in app.metric if item.label == 'Pedidos registrados') == '600'
+    assert next(item.value for item in app.metric if item.label == 'Pedidos registrados') == str(total)
     app.sidebar.multiselect[0].set_value(['La Paz']).run()
     assert not app.exception
     registered = next(item.value for item in app.metric if item.label == 'Pedidos registrados')
-    assert 0 < int(registered.replace(',', '')) < 600
+    assert 0 < int(registered.replace(',', '')) < total
     app.sidebar.multiselect[0].set_value([]).run()
     assert not app.exception
     assert 'No hay pedidos' in app.warning[0].value

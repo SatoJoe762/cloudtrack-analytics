@@ -1,5 +1,7 @@
 from pathlib import Path
 from hashlib import sha256
+from time import monotonic
+from datetime import datetime, timezone
 import json
 from html import escape
 import pandas as pd
@@ -14,6 +16,7 @@ from cloudtrack.presentation import PRIMARY, BLUE, STATUS_LABELS, STATUS_COLORS,
 st.set_page_config(page_title="CloudTrack Analytics", page_icon=":material/monitoring:", layout="wide")
 st.markdown("<style>" + dashboard_styles() + "</style>", unsafe_allow_html=True)
 header = st.empty()
+auto_refresh = False
 
 with st.sidebar:
     st.markdown(f'<div class="ct-brand"><span class="ct-brand-mark">{icon("chart")}</span>'
@@ -30,6 +33,20 @@ with st.sidebar:
                       "Conecta una fuente remota o alojada en la nube"],
             label_visibility="collapsed", width="stretch",
         )
+    if source != "Cargar CSV":
+        with st.expander("Actualización de datos"):
+            auto_refresh = st.toggle("Actualizar cada 30 segundos", value=True, key="auto_refresh")
+            st.button("Actualizar ahora", key="refresh_source", icon=":material/refresh:")
+            st.caption("Relee el archivo con la sesión abierta. Al cambiar los datos se restablecen los filtros.")
+
+@st.fragment(run_every=30 if auto_refresh else None)
+def refresh_source(started_at):
+    # En la primera llamada se conserva la vista; el siguiente tick relee la fuente completa.
+    if auto_refresh and monotonic() - started_at >= 30:
+        st.rerun()
+
+
+refresh_source(monotonic())
 
 source_name = {"Demostración": "Datos de demostración", "Cargar CSV": "CSV de esta sesión"}.get(source)
 if source_name is None:
@@ -61,6 +78,7 @@ try:
             content = read_r2_orders()
         st.caption(f"Fuente: {source_name} · Lectura de un bucket privado. El panel no modifica el archivo.")
     orders = load_orders(content)
+    st.caption(f"Última lectura correcta: {datetime.now(timezone.utc):%H:%M:%S} UTC · {len(orders):,} pedidos en la fuente.")
 except R2ConfigurationError:
     st.warning("La conexión con Cloudflare R2 aún no está configurada.")
     st.info("Puedes usar Demostración o Cargar CSV mientras configuras la conexión. La configuración de Streamlit publicado y la de tu equipo son independientes.")
@@ -69,6 +87,9 @@ except R2ConfigurationError:
     st.stop()
 except ValueError as exc:
     st.error(str(exc))
+    st.stop()
+except OSError:
+    st.error("No se pudo leer el CSV local. Comprueba que el archivo exista y termine de guardarse; después actualiza la fuente.")
     st.stop()
 except (BotoCoreError, ClientError):
     st.error("No se pudo leer el almacenamiento cloud. Revise endpoint, credenciales de lectura, bucket y ruta del objeto.")
@@ -97,7 +118,7 @@ with st.sidebar:
     cities = st.multiselect("Ciudades", filter_defaults["filter_cities"], default=filter_defaults["filter_cities"], key="filter_cities")
     categories = st.multiselect("Categorías", filter_defaults["filter_categories"], default=filter_defaults["filter_categories"], key="filter_categories")
     dates = st.date_input("Fecha del pedido", value=filter_defaults["filter_dates"], key="filter_dates", format="DD/MM/YYYY")
-    st.button("Restablecer filtros", on_click=reset_filters, icon=":material/restart_alt:")
+    st.button("Restablecer filtros", on_click=reset_filters, key="reset_filters", icon=":material/restart_alt:")
     st.markdown('<div class="ct-sidebar-note">Los filtros se aplican a todas las pestañas y descargas.</div>'
                 '<div class="ct-sidebar-footer">CloudTrack Analytics<span>Ventas y entregas · BOB</span></div>', unsafe_allow_html=True)
 if len(dates) != 2:
