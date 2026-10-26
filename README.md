@@ -1,117 +1,155 @@
 # CloudTrack Analytics
 
-Proyecto académico de analítica de comercio electrónico y entregas para cinco estudiantes de Computación en la Nube. **Código en [GitHub](https://github.com/SatoJoe762/cloudtrack-analytics) y [demo publicada](https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/). Lectura real desde Cloudflare R2 validada el 22 de octubre de 2026.**
+<p align="center">
+  <strong>Analítica clara para ventas y entregas.</strong><br>
+  Explora qué categorías y ciudades concentran las ventas y dónde se incumplen los plazos.
+</p>
 
-Pregunta central: ¿qué ciudades y categorías concentran ventas y dónde se incumplen los plazos de entrega?
+<p align="center">
+  <a href="https://cloudtrack-analytics-exmcgfwkcp9hsubskacdnw.streamlit.app/">Abrir dashboard</a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/SatoJoe762/cloudtrack-analytics">Ver repositorio</a>
+  &nbsp;·&nbsp;
+  <a href="docs/arquitectura.md">Leer arquitectura</a>
+</p>
 
-## Almacenamiento elegido
+<p align="center">
+  <img alt="Python 3.12" src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white">
+  <img alt="Streamlit" src="https://img.shields.io/badge/UI-Streamlit-FF4B4B?logo=streamlit&logoColor=white">
+  <img alt="Plotly" src="https://img.shields.io/badge/Charts-Plotly-3F4F75?logo=plotly&logoColor=white">
+  <img alt="Cloudflare R2" src="https://img.shields.io/badge/Storage-Cloudflare_R2-F38020?logo=cloudflare&logoColor=white">
+</p>
 
-Usaremos Cloudflare R2 para el CSV y mantendremos el dashboard en Streamlit. Seguir [la guía R2 paso a paso](docs/cloudflare-r2.md). La conexión requiere el endpoint de Cloudflare R2; si falta, el panel ofrece instrucciones sin intentar usar otro proveedor. No se necesitan dependencias nuevas ni una cuenta AWS para usar R2. La lectura real del bucket privado se comprobó el 22 de octubre de 2026; la demo local funciona sin secretos. Ver [evidencia y límites de la validación](docs/validacion.md).
+<p align="center">
+  <img src=".impeccable/review/desktop.png" alt="Vista previa del dashboard CloudTrack Analytics con indicadores, filtros y gráficos de ventas" width="100%">
+</p>
 
-## Stack y alcance
+## El proyecto
 
-| Componente | Elección | Motivo |
-|---|---|---|
-| Lenguaje | Python 3.12 recomendado | Un solo lenguaje para datos y panel |
-| Interfaz | Streamlit | Dashboard interactivo sin frontend separado |
-| Transformación | pandas | Validar CSV, agrupar y calcular KPIs |
-| Visualización | Plotly Express | Gráficos interactivos con pocas líneas |
-| Almacenamiento cloud | Cloudflare R2 privado | Separar datos persistentes de la aplicación |
-| Publicación | Streamlit Community Cloud | Desplegar desde GitHub |
-| Colaboración | GitHub, PR, Actions y pytest | Revisión y validación automática |
-| Portabilidad | Docker opcional | Ejecutar el mismo servicio en otra plataforma |
+CloudTrack Analytics es un proyecto académico de **Computación en la Nube** que convierte datos de pedidos en una vista práctica de ventas y cumplimiento de entregas. Está desarrollado por un equipo de cinco estudiantes.
 
-Dependencias directas en requirements.txt con rangos acotados. `requirements.lock.txt` registra las versiones exactas usadas durante la validación local; regenerarlo cuando actualicen dependencias. CI usa requirements-dev.txt para comprobar compatibilidad dentro de los rangos. No hay base de datos: el CSV es el conjunto de datos y pandas procesa en memoria. Considerar PostgreSQL o un motor de consulta cuando existan escrituras concurrentes o volúmenes que superen la memoria disponible.
+El dashboard permite explorar datos de demostración, cargar un CSV propio o leer un archivo privado desde **Cloudflare R2**. La conexión real de lectura a R2 se validó el 22 de octubre de 2026; la demostración local funciona sin credenciales.
 
-## Ejecutar
+## Qué puedes analizar
 
-Desde esta carpeta, con Python instalado:
+- **Ventas:** importes entregados por fecha y categoría, expresados en bolivianos (BOB).
+- **Entregas:** estados de pedidos, puntualidad por ciudad y días medios de entrega.
+- **Indicadores:** pedidos registrados y entregados, ventas entregadas, ticket promedio y porcentaje puntual.
+- **Filtros:** ciudad, categoría y fecha del pedido, aplicados a las vistas y descargas.
+- **Fuentes:** datos sintéticos, carga local de CSV y almacenamiento privado en R2.
+- **Exportación:** descarga del CSV filtrado para análisis adicional.
+
+La demo incluye **600 pedidos sintéticos**, de enero a marzo de 2026, generados con semilla 42.
+
+## Inicio rápido
+
+Requiere Python 3.12 recomendado. Desde la carpeta del proyecto, crea un entorno e inicia la aplicación:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
-python -m pytest -q
 python -m streamlit run app.py
 ```
 
-En Windows PowerShell: crear el entorno con `py -3.12 -m venv .venv` y activarlo con `.venv\Scripts\Activate.ps1`. Abrir la dirección que muestra Streamlit, habitualmente http://localhost:8501. Los datos demo están incluidos; no necesitan cuenta cloud para comenzar.
+Abre la dirección local que indique Streamlit, normalmente <http://localhost:8501>. Los datos de demostración están incluidos; puedes comenzar sin configurar una cuenta cloud.
 
-Para reproducir el entorno validado, instalar `python -m pip install -r requirements.lock.txt` en un entorno nuevo. El lock incluye herramientas de pruebas.
+En Windows PowerShell, crea y activa el entorno con:
+
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+Para ejecutar las pruebas:
+
+```bash
+python -m pytest -q
+```
+
+Para reproducir el entorno con las versiones exactas validadas, usa `requirements.lock.txt` en un entorno nuevo. El archivo lock incluye las herramientas de pruebas; actualízalo cuando cambien las dependencias.
+
+## Arquitectura y tecnologías
+
+| Capa | Tecnología | Uso |
+|---|---|---|
+| Aplicación | Python 3.12 · Streamlit | Interfaz interactiva y filtros |
+| Datos | pandas | Validación, transformación y métricas |
+| Gráficos | Plotly Express | Visualizaciones interactivas |
+| Almacenamiento | Cloudflare R2 privado | Lectura del CSV remoto |
+| Publicación | Streamlit Community Cloud | Despliegue conectado a GitHub |
+| Calidad | pytest · GitHub Actions | Pruebas del contrato y validación de PR |
+| Contenedor | Docker opcional | Ejecución portable |
+
+El CSV es el conjunto de datos y pandas lo procesa en memoria; el proyecto no usa una base de datos. La guía de [arquitectura](docs/arquitectura.md) describe la separación entre cómputo y almacenamiento, el acceso de mínimo privilegio y la gestión de secretos.
+
+## Estructura del proyecto
+
+```text
+cloudtrack-analytics/
+├── app.py                       # Dashboard, filtros y fuentes
+├── cloudtrack/
+│   ├── analytics.py             # Validación y KPIs
+│   ├── presentation.py          # Estilos y visualizaciones
+│   └── storage.py               # Lectura de objetos en R2
+├── assets/                      # Estilos y tokens visuales
+├── data/orders_demo.csv         # Datos sintéticos
+├── scripts/generate_demo.py     # Generador de datos de ejemplo
+├── tests/                       # Pruebas de analítica, R2 y panel
+├── docs/                        # Arquitectura, datos y despliegue
+├── .github/workflows/ci.yml     # Integración continua
+├── .streamlit/                  # Configuración y ejemplo de secretos
+├── requirements*.txt            # Dependencias
+└── Dockerfile                   # Imagen opcional
+```
+
+## Cloudflare R2
+
+Para configurar la fuente remota, sigue la [guía de conexión a R2](docs/cloudflare-r2.md). Se necesita el endpoint de Cloudflare R2 y credenciales almacenadas como secretos; si la configuración está incompleta, el panel muestra instrucciones y no intenta conectarse a otro proveedor. No se requiere una cuenta AWS.
+
+La plantilla local está en `.streamlit/secrets.toml.example`. **No subas secretos ni CSV con datos reales a Git.** La demo pública debe usar exclusivamente datos sintéticos o autorizados. La [validación de R2 y sus límites](docs/validacion.md) detalla qué se comprobó.
+
+## Opcional: generar datos y usar Docker
 
 ```bash
 python scripts/generate_demo.py
-# Opcional, con Docker instalado:
 docker build -t cloudtrack-analytics .
 docker run --rm -p 8501:8501 cloudtrack-analytics
 ```
 
-## Qué funciona
+Docker requiere estar instalado y puede necesitar configuración adicional en el entorno donde se ejecute.
 
-- Demostración con 600 pedidos sintéticos de enero a marzo de 2026, semilla 42.
-- Carga de CSV UTF-8 de hasta 10 MB, validación y normalización de espacios y estados.
-- Filtros por ciudad, categoría y fecha del pedido.
-- Pedidos registrados, ventas entregadas, ticket medio, porcentaje puntual y días medios de entrega.
-- Ventas por fecha y categoría, estados y puntualidad por ciudad.
-- Exportación del CSV filtrado y conexión de lectura a un objeto privado en R2.
-- Pruebas del contrato, KPIs, acceso R2 simulado y ejecución del panel; workflow para PR y main.
+## Colaboración
 
-## Estructura
-
-```text
-cloudtrack-analytics/
-├── app.py                       # Panel y filtros
-├── cloudtrack/
-│   ├── analytics.py             # Validación y KPIs
-│   └── storage.py               # Lectura R2 con límite y tiempos de espera
-├── data/orders_demo.csv         # Solo datos sintéticos
-├── scripts/generate_demo.py
-├── tests/                       # Analítica, R2 y panel
-├── docs/
-│   ├── arquitectura.md
-│   ├── datos.md
-│   ├── despliegue.md
-│   ├── plan-e-informe.md
-│   └── s3-read-policy.json
-├── .github/workflows/ci.yml
-├── .github/pull_request_template.md
-├── .streamlit/config.toml
-├── .streamlit/secrets.toml.example
-├── CONTRIBUTING.md
-├── requirements.txt
-├── requirements-dev.txt
-├── requirements.lock.txt
-├── Dockerfile
-├── .dockerignore
-└── .gitignore
-```
-
-## Repositorio del equipo
-
-El repositorio ya está creado en https://github.com/SatoJoe762/cloudtrack-analytics. Para incorporarse, aceptar la invitación del propietario y clonar una copia propia:
+El repositorio del equipo es [SatoJoe762/cloudtrack-analytics](https://github.com/SatoJoe762/cloudtrack-analytics). Clona el proyecto y sigue [CONTRIBUTING.md](CONTRIBUTING.md) para trabajar en una rama y enviar un pull request:
 
 ```bash
 git clone https://github.com/SatoJoe762/cloudtrack-analytics.git
 cd cloudtrack-analytics
 ```
 
-Crear un entorno local y seguir [CONTRIBUTING.md](CONTRIBUTING.md) para trabajar con ramas y PR. No hace falta crear otro repositorio, repetir git init ni compartir la carpeta .venv.
+No hace falta crear otro repositorio ni versionar el entorno `.venv`. Las contribuciones e informes deben atribuirse según el trabajo realmente realizado.
 
-## Qué demuestra de Computación en la Nube
+## Alcance y limitaciones
 
-[Arquitectura](docs/arquitectura.md): aplicación alojada, almacenamiento de objetos, credenciales de mínimo privilegio, HTTPS, secretos fuera de Git, CI y separación entre cómputo y persistencia. La lectura real desde R2 ya se comprobó en la aplicación publicada; el modo Demostración sigue disponible para trabajar sin credenciales.
+El análisis es descriptivo y por lotes: no predice resultados ni captura pedidos en tiempo real. El estado de cada pedido es una fotografía, por lo que no hay historial de cambios. La puntualidad se calcula para pedidos entregados; los pedidos en tránsito pueden estar vencidos. Los filtros no permiten inferir causalidad. Se reportan importes en BOB, pero no se calcula utilidad o beneficio con solo el costo de envío.
 
-[Despliegue](docs/despliegue.md) · [Contrato y fórmulas](docs/datos.md) · [Pruebas del equipo](docs/pruebas-equipo.md) · [Dashboard para la feria](docs/dashboard-feria.md) · [Plan e informe](docs/plan-e-informe.md).
+Los CSV se validan como un conjunto completo para evitar exclusiones silenciosas; el límite de carga es 10 MB. La exportación conserva datos de entrada: trata archivos externos como contenido no confiable al abrirlos en hojas de cálculo. El panel no implementa autenticación propia; los filtros no controlan el acceso. El bucket privado protege el objeto, pero cualquier persona con acceso al dashboard puede ver los datos que este muestra.
 
-## Límites
+## Documentación
 
-Análisis descriptivo por lotes, sin predicción ni captura de pedidos en tiempo real. El estado es una fotografía: no existen eventos históricos para reconstruir cada cambio. Los pedidos en tránsito pueden estar vencidos; el KPI de puntualidad solo evalúa entregados. Los filtros no permiten inferir causalidad. Los importes son BOB; no se calcula utilidad ni beneficio con solo el costo de envío. Se rechaza el archivo completo ante errores de contrato para evitar exclusiones silenciosas. La exportación conserva datos de entrada: tratar CSV externos como contenido no confiable al abrirlos en hojas de cálculo.
+- [Arquitectura cloud](docs/arquitectura.md)
+- [Guía de Cloudflare R2](docs/cloudflare-r2.md)
+- [Contrato de datos y fórmulas](docs/datos.md)
+- [Despliegue](docs/despliegue.md)
+- [Validación y límites](docs/validacion.md)
+- [Pruebas del equipo](docs/pruebas-equipo.md)
+- [Dashboard para la feria](docs/dashboard-feria.md)
+- [Plan e informe](docs/plan-e-informe.md)
 
-Usar exclusivamente datos sintéticos en la demo pública. El panel inicial no implementa autenticación propia; los filtros no son controles de acceso. El bucket privado protege el objeto, pero el panel muestra sus datos a quien pueda abrir la aplicación. Máximo 10 MB por CSV; cada interacción vuelve a procesar los datos y en modo cloud realiza una lectura. Docker está incluido como opción y requiere validación en su equipo.
+## Referencias
 
-## Referencias oficiales
-
-- [Streamlit: despliegue desde GitHub](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app)
-- [Streamlit: manejo de secretos](https://docs.streamlit.io/deploy/concepts/secrets)
+- [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app)
+- [Streamlit: gestión de secretos](https://docs.streamlit.io/deploy/concepts/secrets)
 - [Plotly Express](https://plotly.com/python/plotly-express/)
-- [Cloudflare R2: documentación](https://developers.cloudflare.com/r2/)
+- [Cloudflare R2](https://developers.cloudflare.com/r2/)
