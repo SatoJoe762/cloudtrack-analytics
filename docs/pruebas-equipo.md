@@ -19,12 +19,12 @@ Todas las filas siguientes están pendientes de ejecución por el equipo. La int
 | Caso | Pasos | Resultado esperado | Resultado observado / fecha / persona |
 |---|---|---|---|
 | 1. Acceso | Abrir el enlace en otro equipo o navegador | Panel accesible, sin error de importación | Pendiente |
-| 2. Demo | Elegir Demostración y Restablecer filtros | 600 pedidos, BOB 535.460,90 y 49,7 % puntualidad | Pendiente |
-| 3. Lectura R2 | Elegir Almacenamiento cloud y Restablecer filtros | Mismos totales; Entregas muestra 255 tardíos y 2,89 días | Pendiente |
+| 2. Demo | Elegir Demostración y Restablecer filtros | 100 pedidos, BOB 87.889,84 y 44,8 % puntualidad | Pendiente |
+| 3. Lectura R2 | Elegir Almacenamiento cloud y Restablecer filtros | Totales del CSV que esté en R2, iguales al cargar ese mismo archivo por Cargar CSV | Pendiente |
 | 4. Filtros | Elegir solo La Paz, manteniendo categorías y fechas completas | 213 pedidos; gráficos y reporte respetan la selección | Pendiente |
-| 5. Sin selección | Quitar todas las ciudades; luego Restablecer filtros | Aviso sin error; después recupera 600 pedidos y mantiene la fuente | Pendiente |
+| 5. Sin selección | Quitar todas las ciudades; luego Restablecer filtros | Aviso sin error; después recupera todos los pedidos de la fuente elegida | Pendiente |
 | 6. Descargas | Filtrar La Paz y descargar CSV/JSON en Datos y metodología | CSV con 213 pedidos; JSON corresponde a esa selección | Pendiente |
-| 7. Carga válida | Elegir Cargar CSV y subir data/orders_demo.csv | 600 pedidos; R2 no se modifica | Pendiente |
+| 7. Carga válida | Elegir Cargar CSV y subir data/orders_demo.csv | 100 pedidos; R2 no se modifica | Pendiente |
 | 8. Carga inválida | Subir copia del demo sin columna order_id | Mensaje de columna faltante, sin mostrar un análisis exitoso | Pendiente |
 | 9. Cambio de fuente | Tras filtrar, cambiar entre Demo y cloud | Se restablece el rango y las selecciones al cambiar la fuente | Pendiente |
 

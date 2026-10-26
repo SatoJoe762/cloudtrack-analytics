@@ -1,0 +1,13 @@
+order_id,order_date,city,category,amount_bob,shipping_cost_bob,status,promised_date,delivered_date
+PR-1001,2026-04-01,La Paz,Tecnología,1299.90,25.00,entregado,2026-04-05,2026-04-04
+PR-1002,2026-04-02,Cochabamba,Hogar,249.50,18.50,entregado,2026-04-06,2026-04-08
+PR-1003,2026-04-03,Santa Cruz,Moda,389.00,20.00,entregado,2026-04-07,2026-04-07
+PR-1004,2026-04-04,La Paz,Deportes,560.75,22.00,en_transito,2026-04-10,
+PR-1005,2026-04-05,Cochabamba,Tecnología,2100.00,30.00,entregado,2026-04-10,2026-04-09
+PR-1006,2026-04-06,Santa Cruz,Hogar,175.25,15.00,cancelado,2026-04-11,
+PR-1007,2026-04-07,La Paz,Moda,420.00,19.50,entregado,2026-04-12,2026-04-14
+PR-1008,2026-04-08,Cochabamba,Deportes,899.99,24.00,en_transito,2026-04-14,
+PR-1009,2026-04-09,Santa Cruz,Tecnología,1490.00,28.00,entregado,2026-04-15,2026-04-13
+PR-1010,2026-04-10,La Paz,Hogar,315.80,16.00,cancelado,2026-04-16,
+PR-1011,2026-04-11,Cochabamba,Moda,720.00,21.00,entregado,2026-04-17,2026-04-19
+PR-1012,2026-04-12,Santa Cruz,Deportes,1050.00,26.50,entregado,2026-04-18,2026-04-17

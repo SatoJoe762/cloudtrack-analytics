@@ -71,6 +71,7 @@ def test_default_demo_report_is_valid_json():
     result = run_report('--json')
     assert result.returncode == 0, result.stderr
     report = json.loads(result.stdout)
-    assert report['orders'] == 600
-    assert sum(report['statuses'].values()) == 600
+    expected = build_report((ROOT / 'data/orders_demo.csv').read_bytes())
+    assert report == expected
+    assert sum(report['statuses'].values()) == report['orders']
     assert report['delivery_delays']['late_deliveries'] <= report['metrics']['delivered']

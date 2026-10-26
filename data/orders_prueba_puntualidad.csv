@@ -1,0 +1,13 @@
+order_id,order_date,city,category,amount_bob,shipping_cost_bob,status,promised_date,delivered_date
+PT-3001,2026-06-01,La Paz,Electrónica,2450.00,32.00,entregado,2026-06-05,2026-06-03
+PT-3002,2026-06-02,La Paz,Hogar,320.00,18.00,entregado,2026-06-06,2026-06-06
+PT-3003,2026-06-03,Santa Cruz,Electrónica,1890.50,29.00,entregado,2026-06-07,2026-06-10
+PT-3004,2026-06-04,Cochabamba,Deportes,780.00,22.00,entregado,2026-06-08,2026-06-12
+PT-3005,2026-06-05,Santa Cruz,Hogar,275.50,17.00,entregado,2026-06-10,2026-06-09
+PT-3006,2026-06-06,Cochabamba,Electrónica,3290.00,35.00,entregado,2026-06-11,2026-06-15
+PT-3007,2026-06-07,La Paz,Deportes,645.00,21.00,entregado,2026-06-12,2026-06-12
+PT-3008,2026-06-08,Santa Cruz,Moda,430.00,19.00,en_transito,2026-06-14,
+PT-3009,2026-06-09,Cochabamba,Hogar,510.75,20.00,entregado,2026-06-15,2026-06-18
+PT-3010,2026-06-10,La Paz,Moda,399.00,18.00,cancelado,2026-06-16,
+PT-3011,2026-06-11,Santa Cruz,Deportes,920.00,23.00,entregado,2026-06-17,2026-06-16
+PT-3012,2026-06-12,Cochabamba,Moda,680.00,20.00,en_transito,2026-06-18,

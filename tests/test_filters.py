@@ -34,7 +34,7 @@ def test_reset_restores_all_filters_after_empty_selection_and_keeps_source(monke
     app.sidebar.date_input[0].set_value((date(2026, 1, 2), date(2026, 1, 2))).run()
     app.sidebar.multiselect[0].set_value([]).run()
     assert app.warning
-    app.sidebar.button[0].click().run()
+    app.sidebar.button(key='reset_filters').click().run()
     assert not app.exception
     assert app.sidebar.radio[0].value == 'Almacenamiento cloud'
     assert app.sidebar.multiselect[0].value == ['La Paz', 'Santa Cruz']
@@ -59,7 +59,7 @@ def test_delay_indicators_follow_city_filter_and_no_late_case(monkeypatch):
 
 def test_date_range_kpi_matches_independent_csv_calculation():
     app = AppTest.from_file(APP).run(timeout=30)
-    start, end = date(2026, 2, 1), date(2026, 2, 28)
+    start, end = date(2026, 5, 1), date(2026, 5, 31)
     app.sidebar.date_input[0].set_value((start, end)).run()
     assert not app.exception
     raw = pd.read_csv(ROOT / 'data/orders_demo.csv')
@@ -82,7 +82,40 @@ def test_new_r2_content_resets_incompatible_filters(monkeypatch):
     assert metric(app, 'Pedidos registrados') == '4'
     app.sidebar.radio[0].set_value('Demostración').run()
     assert not app.exception
-    assert metric(app, 'Pedidos registrados') == '600'
+    total = len(load_orders((ROOT / 'data/orders_demo.csv').read_bytes()))
+    assert metric(app, 'Pedidos registrados') == f'{total:,}'
+
+
+def test_manual_refresh_preserves_filters_until_source_content_changes(monkeypatch):
+    app = r2_app(monkeypatch)
+    app.sidebar.toggle(key='auto_refresh').set_value(False).run()
+    app.sidebar.multiselect[0].set_value(['La Paz']).run()
+    app.sidebar.button(key='refresh_source').click().run()
+    assert app.sidebar.multiselect[0].value == ['La Paz']
+    assert metric(app, 'Pedidos registrados') == '3'
+    replacement = CSV + 'E,2026-02-01,Tarija,Libros,80,5,entregado,2026-02-03,2026-02-03\n'
+    monkeypatch.setattr('cloudtrack.storage.read_r2_orders', lambda: replacement.encode())
+    app.sidebar.button(key='refresh_source').click().run()
+    assert not app.exception
+    assert metric(app, 'Pedidos registrados') == '5'
+    assert app.sidebar.multiselect[0].value == ['La Paz', 'Santa Cruz', 'Tarija']
+    assert app.sidebar.date_input[0].value[-1] == date(2026, 2, 1)
+
+
+def test_refresh_recovers_after_temporary_cloud_error(monkeypatch):
+    from botocore.exceptions import ClientError
+    app = r2_app(monkeypatch)
+    def missing_object():
+        raise ClientError({'Error': {'Code': 'NoSuchKey'}}, 'GetObject')
+    monkeypatch.setattr('cloudtrack.storage.read_r2_orders', missing_object)
+    app.sidebar.button(key='refresh_source').click().run()
+    assert not app.exception
+    assert app.error
+    monkeypatch.setattr('cloudtrack.storage.read_r2_orders', lambda: CSV.encode())
+    app.sidebar.button(key='refresh_source').click().run()
+    assert not app.exception
+    assert not app.error
+    assert metric(app, 'Pedidos registrados') == '4'
 
 
 def test_summary_matches_filtered_selection_and_serializes_empty_values():

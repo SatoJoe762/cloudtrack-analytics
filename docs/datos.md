@@ -24,7 +24,21 @@ No se mezclan monedas ni se incluyen nombres, teléfonos, direcciones o correos.
 | Almacenamiento cloud | Objeto privado `cloudtrack-datos/raw/orders.csv` en Cloudflare R2 | Cambia cuando un miembro autorizado reemplaza ese objeto en R2 |
 | Cargar CSV | Archivo elegido desde el equipo del visitante | Se analiza en la sesión; la aplicación no lo escribe en GitHub ni R2 |
 
-El archivo de R2 se creó a partir del CSV sintético del repositorio. Son dos copias independientes: subir a R2 no elimina el archivo de GitHub, y modificar el CSV en GitHub no actualiza R2. Mantener el demo sintético en Git permite reproducir las pruebas y ejecutar sin conexión al almacenamiento cloud. El panel publicado comienza en Demostración; para consultar R2 hay que elegir Almacenamiento cloud.
+El archivo original de R2 tenía 600 pedidos; su referencia sintética está en `data/orders_cloud_reference.csv`. La demostración actual tiene 100 pedidos nuevos de mayo a junio de 2026 en `data/orders_demo.csv`. Son archivos independientes: modificar el CSV local o en GitHub no actualiza R2. El contenido actual de R2 depende del último archivo subido. El panel comienza en Demostración; para consultar R2 hay que elegir Almacenamiento cloud.
+
+## Modificar o agregar pedidos
+
+1. Guarda un respaldo del archivo que vas a editar.
+2. Edita las filas o agrega pedidos con IDs únicos, manteniendo los nueve encabezados y las reglas del contrato. Guarda en CSV UTF-8 separado por comas.
+3. Valida el archivo con `.venv/bin/python -m scripts.quality_report RUTA_DEL_CSV`. Si hay errores, corrígelos antes de reemplazar la fuente.
+4. Para la demo que corre en tu equipo, reemplaza `data/orders_demo.csv`. Para R2, reemplaza el objeto exacto `raw/orders.csv` en el bucket configurado, conservando ese nombre y ruta aunque tu archivo original se llame distinto.
+5. Con la sesión abierta, “Actualizar cada 30 segundos” relee la fuente. También puedes usar “Actualizar ahora”. Si cambia el contenido se restablecen ciudades, categorías y fechas para mostrar el conjunto nuevo; si no cambia, se conserva la selección.
+
+La hora de “Última lectura correcta” se expresa en UTC y corresponde a una lectura validada, no a la fecha de modificación del archivo. Si la nueva fuente es inválida o no existe, se muestra un error y la revisión automática permite recuperar la lectura cuando se corrija.
+
+En Streamlit Community Cloud, Demostración lee la copia desplegada desde GitHub: para cambiarla hay que integrar el CSV en `main` y esperar el despliegue. Un archivo editado solo en tu computadora no se envía automáticamente al alojamiento. En modo “Cargar CSV”, vuelve a seleccionar el archivo después de editarlo; la copia de la sesión no sigue los cambios del disco.
+
+El dashboard mantiene permisos de solo lectura en R2. La edición y la carga se hacen fuera del panel; no se añaden credenciales de escritura. Cada revisión cloud genera una lectura por sesión abierta; puedes desactivarla cuando no la necesites. Se usa [`st.fragment`](https://docs.streamlit.io/develop/api-reference/execution-flow/st.fragment) para programar la revisión dentro de la sesión.
 
 Para actualizar la fuente cloud:
 
@@ -72,7 +86,7 @@ El reporte usa `load_orders`, la misma validación del panel: muestra cantidad d
 
 Este control comprueba consistencia interna, no garantiza que los datos sean verdaderos o representativos. No es un reporte de todas las anomalías por fila: ante un archivo inválido devuelve el primer problema detectado. Para la demo se usan datos sintéticos.
 
-Ver [resultados reproducibles del dataset demo](reporte-calidad.md). Los indicadores de retraso ya están integrados en la pestaña Entregas del dashboard.
+Ver [resultados históricos de la referencia cloud original](reporte-calidad.md). Los indicadores de retraso ya están integrados en la pestaña Entregas del dashboard.
 
 
 ## Uso del dashboard

@@ -67,9 +67,25 @@ def test_normalization():
 
 def test_demo_contract():
     demo = Path(__file__).resolve().parents[1] / 'data/orders_demo.csv'
-    result = metrics(load_orders(demo.read_bytes()))
-    assert result['orders'] == 600
-    assert 0 < result['on_time_pct'] < 100
+    orders = load_orders(demo.read_bytes())
+    result = metrics(orders)
+    assert result['orders'] > 0
+    assert result['on_time_pct'] is None or 0 <= result['on_time_pct'] <= 100
+
+
+def test_generator_creates_100_reproducible_orders_distinct_from_original_cloud(tmp_path, monkeypatch):
+    from scripts import generate_demo
+    monkeypatch.setattr(generate_demo, '__file__', str(tmp_path / 'scripts/generate_demo.py'))
+    generate_demo.main()
+    generated = tmp_path / 'data/orders_demo.csv'
+    content = generated.read_bytes()
+    orders = load_orders(content)
+    assert len(orders) == 100
+    reference = load_orders((Path(__file__).resolve().parents[1] / 'data/orders_cloud_reference.csv').read_bytes())
+    assert len(reference) == 600
+    assert set(orders.order_id).isdisjoint(reference.order_id)
+    generate_demo.main()
+    assert generated.read_bytes() == content
 
 
 def test_delay_metrics_average_only_positive_delivered_delays():

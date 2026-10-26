@@ -39,7 +39,9 @@ El dashboard permite explorar datos de demostración, cargar un CSV propio o lee
 - **Fuentes:** datos sintéticos, carga local de CSV y almacenamiento privado en R2.
 - **Exportación:** descarga del CSV filtrado para análisis adicional.
 
-La demo incluye **600 pedidos sintéticos**, de enero a marzo de 2026, generados con semilla 42.
+La demo local incluye **100 pedidos sintéticos**, de mayo a junio de 2026, generados con semilla 2026. Es distinta del conjunto original de 600 pedidos usado en R2, que se conserva en `data/orders_cloud_reference.csv` como respaldo sintético. El archivo que lea R2 depende del objeto que se haya subido allí.
+
+Demostración y Almacenamiento cloud pueden releerse **cada 30 segundos mientras la sesión está abierta**. En el sidebar, “Actualización de datos” permite pausar esta revisión o pulsar “Actualizar ahora”. Consulta [cómo modificar o agregar pedidos](docs/datos.md#modificar-o-agregar-pedidos).
 
 ## Inicio rápido
 
@@ -110,6 +112,8 @@ Para configurar la fuente remota, sigue la [guía de conexión a R2](docs/cloudf
 La plantilla local está en `.streamlit/secrets.toml.example`. **No subas secretos ni CSV con datos reales a Git.** La demo pública debe usar exclusivamente datos sintéticos o autorizados. La [validación de R2 y sus límites](docs/validacion.md) detalla qué se comprobó.
 
 ## Opcional: generar datos y usar Docker
+
+El generador reemplaza la demo local por los 100 pedidos originales de este ejemplo. Guarda un respaldo si agregaste o modificaste filas antes de ejecutarlo.
 
 ```bash
 python scripts/generate_demo.py

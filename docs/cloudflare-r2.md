@@ -15,7 +15,7 @@ R2 tiene cuotas mensuales incluidas; no es un servicio con consumo ilimitado. St
 1. Crear un bucket llamado `cloudtrack-datos` o anotar el nombre que elijas.
 2. Seleccionar Standard para la clase de almacenamiento. Para comenzar no hace falta configurar una jurisdicción específica.
 3. Mantener deshabilitados el acceso público, r2.dev y dominios personalizados. Streamlit leerá el objeto desde el servidor con credenciales; no hace falta hacer público el archivo ni configurar CORS para el navegador.
-4. En el bucket crear un prefijo/carpeta `raw` y subir `data/orders_demo.csv` con nombre `orders.csv`. La ruta final debe ser `raw/orders.csv`.
+4. En el bucket crear un prefijo/carpeta `raw` y subir un CSV válido con nombre `orders.csv`. Para reproducir la referencia original de 600 pedidos, usar `data/orders_cloud_reference.csv`; la demo local actual `data/orders_demo.csv` tiene 100 pedidos distintos. La ruta final debe ser `raw/orders.csv`, independientemente del nombre del archivo original.
 
 La carga se hace con tu sesión del panel de Cloudflare. El dashboard de analítica no tendrá permiso para escribir o borrar archivos.
 
@@ -49,12 +49,12 @@ El [PR de Cloudflare R2 #3](https://github.com/SatoJoe762/cloudtrack-analytics/p
 ## 5. Comprobar la integración real
 
 1. Abrir el dashboard, seleccionar `Almacenamiento cloud` y mantener todas las ciudades/categorías y el rango de fechas.
-2. Con el CSV demo intacto, esperar 600 pedidos, ventas entregadas BOB 535.460,90, 255 entregas tardías y 2,89 días de retraso medio.
-3. Comparar esos resultados con Demostración usando exactamente los mismos filtros.
+2. Solo si se subió la referencia original de 600 pedidos, esperar ventas entregadas BOB 535.460,90, 255 entregas tardías y 2,89 días de retraso medio. Con otro CSV, usar sus propios resultados validados.
+3. Comparar con el mismo archivo mediante Cargar CSV usando los mismos filtros. La demostración local de 100 pedidos tiene resultados diferentes.
 4. Probar una ruta equivocada y comprobar el mensaje de error, luego restaurar la ruta correcta.
 5. Registrar fecha, commit desplegado, URL y captura sin secretos para el informe. Pedir a un compañero que abra el dashboard desde otro dispositivo.
 
-El bucket es privado; el dashboard publicado puede mostrar los datos a cualquier visitante que tenga acceso a la aplicación. Mantener datos sintéticos para la demo pública. Cada interacción en modo cloud hace una lectura del objeto, sin caché compartida ni escrituras.
+El bucket es privado; el dashboard publicado puede mostrar los datos a cualquier visitante que tenga acceso a la aplicación. Mantener datos sintéticos para la demo pública. Cada interacción y cada revisión automática activa de 30 segundos en modo cloud hacen una lectura del objeto, sin caché compartida ni escrituras. El control de actualización del sidebar permite pausar las revisiones o leer inmediatamente. Para agregar pedidos, editar el CSV fuera del panel, validarlo y reemplazar el objeto con la misma ruta; no hace falta desplegar código.
 
 ## Si algo falla
 

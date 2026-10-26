@@ -1,0 +1,16 @@
+order_id,order_date,city,category,amount_bob,shipping_cost_bob,status,promised_date,delivered_date
+PC-2001,2026-05-01,La Paz,Tecnología,1850.00,28.00,entregado,2026-05-05,2026-05-04
+PC-2002,2026-05-02,Cochabamba,Hogar,340.50,17.00,entregado,2026-05-06,2026-05-08
+PC-2003,2026-05-03,Santa Cruz,Moda,520.00,21.00,entregado,2026-05-08,2026-05-07
+PC-2004,2026-05-04,Sucre,Deportes,799.90,24.00,entregado,2026-05-09,2026-05-12
+PC-2005,2026-05-05,La Paz,Hogar,245.00,16.00,en_transito,2026-05-11,
+PC-2006,2026-05-06,Cochabamba,Tecnología,2120.00,31.00,entregado,2026-05-12,2026-05-11
+PC-2007,2026-05-07,Santa Cruz,Deportes,645.75,22.00,cancelado,2026-05-13,
+PC-2008,2026-05-08,Sucre,Moda,410.00,19.00,entregado,2026-05-14,2026-05-17
+PC-2009,2026-05-09,La Paz,Deportes,930.00,25.00,entregado,2026-05-15,2026-05-14
+PC-2010,2026-05-10,Cochabamba,Moda,375.00,18.00,en_transito,2026-05-16,
+PC-2011,2026-05-11,Santa Cruz,Tecnología,1690.50,29.00,entregado,2026-05-17,2026-05-20
+PC-2012,2026-05-12,Sucre,Hogar,289.99,15.00,cancelado,2026-05-18,
+PC-2013,2026-05-13,La Paz,Moda,560.00,20.00,entregado,2026-05-19,2026-05-18
+PC-2014,2026-05-14,Cochabamba,Deportes,1100.00,26.00,entregado,2026-05-20,2026-05-23
+PC-2015,2026-05-15,Santa Cruz,Hogar,455.25,17.50,entregado,2026-05-21,2026-05-21

@@ -25,7 +25,7 @@ El gráfico representa la ruta cloud comprobada el 22 de octubre de 2026. Stream
 | Costos y operación | Registrar lecturas, tamaño, región, disponibilidad y alertas de gasto |
 | Escalabilidad y límites | Procesamiento en memoria de máximo 10 MB; medir y discutir cuándo separar ETL o motor de consultas |
 
-Cambiar un archivo en R2 cambia la fuente de la siguiente interacción del panel. Una carga en el navegador solo se analiza durante la sesión y no escribe en R2. El CSV conserva además una copia local; almacenar un objeto en la nube no sustituye una estrategia de respaldo.
+Cambiar un archivo en R2 cambia la fuente de la siguiente interacción o revisión automática del panel (cada 30 segundos mientras la sesión esté abierta y el control esté activado). Una carga en el navegador solo se analiza durante la sesión y no escribe en R2. La demo local tiene 100 pedidos diferentes de la referencia cloud original de 600; no hay sincronización automática entre esos dos archivos. Almacenar un objeto en la nube no sustituye una estrategia de respaldo.
 
 ## Variante si el docente exige IaaS o un solo proveedor
 
